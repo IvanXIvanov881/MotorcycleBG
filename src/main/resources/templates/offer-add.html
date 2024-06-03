@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 
 <head>
     <meta charset="UTF-8">
@@ -14,7 +14,7 @@
 <body>
 
 <div>
-     <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
         <a class="navbar-brand" href="/"><img alt="car picture" src="/img/car.png" class="logo"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,7 +24,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto col-12 justify-content-between">
                 <li class="nav-item"
-                    >
+                >
                     <a class="nav-link" href="/brands/all">All Brands</a>
                 </li>
                 <li class="nav-item">
@@ -52,14 +52,14 @@
                         <a class="nav-link" href="/users/logout">Logout</a>
                     </div>
                 </li>
-                
-                    <li class="nav-item">
-                        <a class="nav-link" href="/users/register">Register</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/users/login">Login</a>
-                    </li>
-                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/users/register">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/users/login">Login</a>
+                </li>
+
             </ul>
         </div>
     </nav>
@@ -68,7 +68,10 @@
 
 <div class="container">
     <h2 class="text-center text-white">Upload Offer</h2>
-    <form method="POST" 
+    <form
+            th:action="@{/offers/add}"
+            th:method="post"
+            th:object="${addOfferDTO}"
           class="main-form mx-auto col-md-8 d-flex flex-column justify-content-center">
         <div class="row">
 
@@ -88,18 +91,19 @@
                 <label for="price" class="text-white font-weight-bold">Price</label>
                 <input id="price" type="number" min="0" step="100" class="form-control"
                        placeholder="Suggested price"/>
-                <p  class="errors alert alert-danger">
+                <p class="errors alert alert-danger">
                     Suggested price is required.
                 </p>
             </div>
         </div>
         <div class="row">
             <div class="form-group col-md-6 mb-3">
-                <label class="text-center text-white font-weight-bold" for="engine">Engine</label>
-                <select id="engine" class="form-control">
+                <label class="text-center text-white font-weight-bold" for="engineType">Engine</label>
+                <select id="engineType" name="engineType" class="form-control">
                     <option value="">- Select engine type -</option>
-                    <option>
-                        Engine type
+                    <option th:each="type: ${allEngineTypes}"
+                            th:value="${type}"
+                            th:text="${type}">
                     </option>
                 </select>
                 <p class="errors alert alert-danger">
@@ -139,9 +143,15 @@
         </div>
 
         <div class="form-group">
-            <label class="text-white font-weight-bold" for="description">Description</label>
-            <textarea id="description" type="textarea" class="form-control" rows="3"
-                      placeholder="Description"></textarea>
+            <label class="text-white font-weight-bold" th:for="description">Description</label>
+            <textarea
+                    th:field="*{description}"
+                    type="textarea"
+                    class="form-control"
+                    rows="3"
+                    placeholder="Description">
+
+            </textarea>
             <p class="errors alert alert-danger">
                 Description is required.
             </p>
@@ -166,7 +176,7 @@
 </div>
 
 <div>
-    <footer> </footer>
+    <footer></footer>
 </div>
 
 </body>

@@ -1,6 +1,6 @@
 spring:
   application:
-    name: mobilele
+    name: MotorcycleBG
   #  thymeleaf:
   #    check-template-location: true
   #    cache: false

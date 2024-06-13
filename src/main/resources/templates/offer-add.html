@@ -13,7 +13,7 @@
 
 <body>
 
-<div th:replace="~{fragments/navbar}"></div>
+<div th:replace="~{fragments/navbar::navbar(activeLink=${'add-offer'})}"></div>
 
 <div class="container">
     <h2 class="text-center text-white">Upload Offer</h2>

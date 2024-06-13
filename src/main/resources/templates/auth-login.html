@@ -11,7 +11,8 @@
 </head>
 
 <body>
-<div th:replace="~{fragments/navbar}"></div>
+
+<div th:replace="~{fragments/navbar::navbar(activeLink=${'login'})}"></div>
 
 <div class="container">
     <h2 class="text-center text-white">Login</h2>

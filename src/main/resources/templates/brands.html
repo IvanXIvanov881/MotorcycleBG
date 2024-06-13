@@ -13,7 +13,7 @@
 
 <body>
 
-<div th:replace="~{fragments/navbar}"></div>
+<div th:replace="~{fragments/navbar::navbar(activeLink=${'brands'})}"></div>
 
 <div class="container">
     <h2 class="text-center text-white m-3">All Brands</h2>

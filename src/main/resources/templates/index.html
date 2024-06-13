@@ -13,7 +13,7 @@
 
 <body>
 
-<div th:replace="~{fragments/navbar}"></div>
+<div th:replace="~{fragments/navbar::navbar(activeLink=${'home'})}"></div>
 
 <div class="container-fluid">
     <h5 class="text-center text-white mt-5"><strong>MOTORCYCLES BG</strong></h5>

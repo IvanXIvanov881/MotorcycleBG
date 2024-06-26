@@ -1,8 +1,12 @@
-<!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<!doctype html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MotorcycleBG</title>
 </head>
 <body>
 
@@ -15,16 +19,22 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto col-12 justify-content-between">
+
                 <li class="nav-item">
-                    <a class="nav-link" href="/brands/all" th:classappend="${activeLink == 'brands'}? 'active'">All Brands</a>
+                    <a class="nav-link" href="/brands/all" th:classappend="${activeLink == 'brands'}? 'active'">All
+                        Brands</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/offers/add" th:classappend="${activeLink == 'add-offer'}? 'active'">Add
+                        Offer</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/offers/add" th:classappend="${activeLink == 'add-offer'}? 'active'">Add Offer</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/offers/all" th:classappend="${activeLink == 'all-offers'}? 'active'">All Offers</a>
+                    <a class="nav-link" href="/offers/all" th:classappend="${activeLink == 'all-offers'}? 'active'">All
+                        Offers</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button"
@@ -41,7 +51,7 @@
                 <li class="nav-item" th:if="${@currentUser.isLoggedIn()}">
                     <div class="form-inline my-2 my-lg-0 border px-3">
                         <div class="logged-user"
-                             text="Welcome, Gosho"></div>
+                             text="Welcome guest"></div>
                         <a class="nav-link" href="/users/logout">Logout</a>
                     </div>
                 </li>
@@ -53,8 +63,8 @@
                 <li class="nav-item" th:unless="${@currentUser.isLoggedIn()}">
                     <a class="nav-link" href="/users/login"
                        th:classappend="${activeLink == 'login'}? 'active'">
-                Login
-                </a>
+                        Login
+                    </a>
                 </li>
 
             </ul>

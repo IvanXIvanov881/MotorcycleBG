@@ -22,7 +22,6 @@ public class OfferDetailController {
                                Model model) {
 
        model.addAttribute("offerDetails", offerService.getOfferDetails(id));
-
         return "details";
     }
 }

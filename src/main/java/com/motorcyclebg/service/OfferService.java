@@ -6,6 +6,5 @@ import com.motorcyclebg.model.OfferDetailsDTO;
 public interface OfferService {
 
     long createOrder(AddOfferDTO addOfferDTO);
-
     OfferDetailsDTO getOfferDetails(Long id);
 }

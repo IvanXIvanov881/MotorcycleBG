@@ -7,6 +7,5 @@ import com.motorcyclebg.model.UserRegistrationDTO;
 public interface UserService {
 
     void registerUser(UserRegistrationDTO userRegistrationDTO);
-
     boolean login(UserLoginDTO userLoginDTO);
 }

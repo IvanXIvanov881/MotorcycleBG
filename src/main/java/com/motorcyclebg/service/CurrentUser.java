@@ -9,7 +9,6 @@ public class CurrentUser {
 
     private String fullName;
     private boolean isLoggedIn;
-
     public String getFullName() {
         return fullName;
     }

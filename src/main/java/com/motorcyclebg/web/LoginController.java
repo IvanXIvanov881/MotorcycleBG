@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class LoginController {
 
     public final UserService userService;
-
     public LoginController(UserService userService) {
         this.userService = userService;
     }
@@ -26,7 +25,6 @@ public class LoginController {
     @PostMapping("/login")
     public String login(UserLoginDTO userLoginDTO) {
         userService.login(userLoginDTO);
-
         return "redirect:/";
     }
 

@@ -60,4 +60,5 @@ public class UserEntity extends BaseEntity{
                 ", lastName='" + lastName + '\'' +
                 '}';
     }
+
 }

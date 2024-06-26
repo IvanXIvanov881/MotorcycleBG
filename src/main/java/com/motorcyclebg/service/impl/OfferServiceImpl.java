@@ -8,6 +8,7 @@ import com.motorcyclebg.service.OfferService;
 import org.springframework.stereotype.Service;
 
 @Service
+
 public class OfferServiceImpl implements OfferService {
 
     private final OfferRepository offerRepository;
@@ -45,7 +46,6 @@ public class OfferServiceImpl implements OfferService {
                 .setDescription(addOfferDTO.description())
                 .setEngine(addOfferDTO.engineType())
                 .setMileage(addOfferDTO.mileage());
-
     }
 
 }

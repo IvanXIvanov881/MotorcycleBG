@@ -18,7 +18,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 public class OfferController {
 
     private final OfferService orderService;
-
     public OfferController(OfferService orderService) {
         this.orderService = orderService;
     }
@@ -34,7 +33,6 @@ public class OfferController {
         if (!model.containsAttribute("addOfferDTO")) {
             model.addAttribute("addOfferDTO", AddOfferDTO.empty());
         }
-
         return "offer-add";
     }
 
@@ -50,9 +48,8 @@ public class OfferController {
             return "redirect:/offers/add";
         }
 
-
         long newOfferId = orderService.createOrder(addOfferDTO);
-
         return "redirect:/offers/" + newOfferId;
     }
+
 }

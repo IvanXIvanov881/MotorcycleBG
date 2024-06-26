@@ -11,8 +11,8 @@ public class HomeController {
     @GetMapping("/")
     public ModelAndView home() {
 
+        //TODO Not use for now.
         int someNumber = new Random().nextInt();
-
         ModelAndView mnv = new ModelAndView();
         mnv.setViewName("index");
         mnv.addObject("TheNumber", someNumber);

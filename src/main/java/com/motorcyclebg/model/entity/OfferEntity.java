@@ -8,7 +8,6 @@ import jakarta.persistence.*;
 public class OfferEntity extends BaseEntity{
 
     private String description;
-
     private Integer mileage;
 
     @Enumerated(EnumType.STRING)
@@ -40,4 +39,5 @@ public class OfferEntity extends BaseEntity{
         this.engine = engine;
         return this;
     }
+
 }

@@ -32,7 +32,6 @@ public class UserServiceImpl implements UserService {
     public void registerUser(UserRegistrationDTO userRegistration) {
 
         userRepository.save(map(userRegistration));
-
     }
 
     @Override
@@ -62,9 +61,7 @@ public class UserServiceImpl implements UserService {
     private UserEntity map(UserRegistrationDTO userRegistrationDTO) {
 
         UserEntity mappedEntity = modelMapper.map(userRegistrationDTO, UserEntity.class);
-
         mappedEntity.setPassword(passwordEncoder.encode(userRegistrationDTO.getPassword()));
-
         return mappedEntity;
     }
 }

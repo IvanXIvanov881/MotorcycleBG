@@ -58,6 +58,11 @@ public class UserServiceImpl implements UserService {
         return false;
     }
 
+    @Override
+    public void logout() {
+        currentUser.clean();
+    }
+
     private UserEntity map(UserRegistrationDTO userRegistrationDTO) {
 
         UserEntity mappedEntity = modelMapper.map(userRegistrationDTO, UserEntity.class);

@@ -52,7 +52,12 @@
                     <div class="form-inline my-2 my-lg-0 border px-3">
                         <div class="logged-user"
                              text="Welcome guest"></div>
-                        <a class="nav-link" href="/users/logout">Logout</a>
+
+                        <form th:method="post"
+                              th:action="@{/users/logout}">
+                            <input class="btn btn-link" type="submit" value="Logout"/>
+                        </form>
+
                     </div>
                 </li>
 

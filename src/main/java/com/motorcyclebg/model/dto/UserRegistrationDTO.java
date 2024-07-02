@@ -1,4 +1,4 @@
-package com.motorcyclebg.model;
+package com.motorcyclebg.model.dto;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;

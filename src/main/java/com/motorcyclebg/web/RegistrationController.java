@@ -1,6 +1,6 @@
 package com.motorcyclebg.web;
 
-import com.motorcyclebg.model.UserRegistrationDTO;
+import com.motorcyclebg.model.dto.UserRegistrationDTO;
 import com.motorcyclebg.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

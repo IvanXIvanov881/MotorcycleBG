@@ -1,7 +1,7 @@
 package com.motorcyclebg.service.impl;
 
-import com.motorcyclebg.model.UserLoginDTO;
-import com.motorcyclebg.model.UserRegistrationDTO;
+import com.motorcyclebg.model.dto.UserLoginDTO;
+import com.motorcyclebg.model.dto.UserRegistrationDTO;
 import com.motorcyclebg.model.entity.UserEntity;
 import com.motorcyclebg.repository.UserRepository;
 import com.motorcyclebg.service.CurrentUser;

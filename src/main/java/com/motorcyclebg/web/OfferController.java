@@ -1,6 +1,6 @@
 package com.motorcyclebg.web;
 
-import com.motorcyclebg.model.AddOfferDTO;
+import com.motorcyclebg.model.dto.AddOfferDTO;
 import com.motorcyclebg.model.enums.EngineTypeEnum;
 import com.motorcyclebg.service.OfferService;
 import jakarta.validation.Valid;

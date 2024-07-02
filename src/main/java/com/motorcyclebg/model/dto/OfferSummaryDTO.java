@@ -1,4 +1,4 @@
-package com.motorcyclebg.model;
+package com.motorcyclebg.model.dto;
 
 import com.motorcyclebg.model.enums.EngineTypeEnum;
 

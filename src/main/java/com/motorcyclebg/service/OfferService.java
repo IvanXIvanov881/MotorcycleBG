@@ -1,8 +1,8 @@
 package com.motorcyclebg.service;
 
-import com.motorcyclebg.model.AddOfferDTO;
-import com.motorcyclebg.model.OfferDetailsDTO;
-import com.motorcyclebg.model.OfferSummaryDTO;
+import com.motorcyclebg.model.dto.AddOfferDTO;
+import com.motorcyclebg.model.dto.OfferDetailsDTO;
+import com.motorcyclebg.model.dto.OfferSummaryDTO;
 
 import java.util.List;
 

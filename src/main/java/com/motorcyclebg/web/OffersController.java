@@ -22,4 +22,5 @@ public class OffersController {
         model.addAttribute("allOffers", offerService.getAllOffersSummary());
         return "offers";
     }
+
 }

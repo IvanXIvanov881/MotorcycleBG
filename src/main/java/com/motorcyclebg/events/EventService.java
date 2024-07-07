@@ -10,4 +10,5 @@ public class EventService {
     public void onTestEvent(TestEvent testEvent) {
         System.out.println("Message received " + testEvent.getMessage());
     }
+
 }

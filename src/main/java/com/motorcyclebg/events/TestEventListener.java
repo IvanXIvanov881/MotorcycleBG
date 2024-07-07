@@ -13,4 +13,5 @@ public class TestEventListener implements ApplicationListener<TestEvent> {
        counter++;
        System.out.println(counter + " events were received. Last message: " + event.getMessage());
     }
+
 }

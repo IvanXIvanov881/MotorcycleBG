@@ -14,4 +14,5 @@ public class TestEvent extends ApplicationEvent {
     public String getMessage() {
         return message;
     }
+
 }

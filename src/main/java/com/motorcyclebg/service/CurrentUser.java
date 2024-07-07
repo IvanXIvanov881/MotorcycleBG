@@ -31,4 +31,5 @@ public class CurrentUser {
         this.fullName = null;
         this.isLoggedIn = false;
     }
+
 }

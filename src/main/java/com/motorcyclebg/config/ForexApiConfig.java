@@ -53,7 +53,6 @@ public class ForexApiConfig {
                     + "currencies different than USD.");
         }
 
-
     }
 
     private static void verifyNotNullOrEmpty(String name, String value) {
@@ -61,4 +60,5 @@ public class ForexApiConfig {
             throw new IllegalArgumentException("Property " + name + " cannot be empty.");
         }
     }
+
 }

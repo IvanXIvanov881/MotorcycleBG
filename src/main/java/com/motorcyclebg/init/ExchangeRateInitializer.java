@@ -21,4 +21,5 @@ public class ExchangeRateInitializer implements CommandLineRunner {
             );
         }
     }
+
 }

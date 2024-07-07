@@ -46,4 +46,5 @@ public class ExRateEntity extends BaseEntity {
                 ", rate=" + rate +
                 '}';
     }
+
 }

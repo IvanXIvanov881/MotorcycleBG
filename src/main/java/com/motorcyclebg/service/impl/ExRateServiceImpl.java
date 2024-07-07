@@ -113,4 +113,5 @@ public class ExRateServiceImpl implements ExRateService {
                 .orElseThrow(() -> new ObjectNotFoundException((Object) to, "Conversion from " + from + " to " + to + " not possible!"))
                 .multiply(amount);
     }
+
 }

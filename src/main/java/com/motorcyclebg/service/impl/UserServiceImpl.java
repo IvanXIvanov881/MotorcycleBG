@@ -34,39 +34,11 @@ public class UserServiceImpl implements UserService {
         userRepository.save(map(userRegistration));
     }
 
-    @Override
-    public boolean login(UserLoginDTO userLoginDTO) {
-
-        UserEntity userEntity = userRepository
-                .findByEmail(userLoginDTO.email())
-                .orElse(null);
-
-        if (userLoginDTO.password() == null ||
-                userEntity == null ||
-                userEntity.getPassword() == null) {
-            return false;
-        }
-
-        boolean success = passwordEncoder.matches(userLoginDTO.password(), userEntity.getPassword());
-
-        if (success) {
-            currentUser.setLoggedIn(true);
-            currentUser.setFullName(userEntity.getFirstName() + " " + userEntity.getLastName());
-        } else {
-            currentUser.clean();
-        }
-        return false;
-    }
-
-    @Override
-    public void logout() {
-        currentUser.clean();
-    }
-
     private UserEntity map(UserRegistrationDTO userRegistrationDTO) {
 
         UserEntity mappedEntity = modelMapper.map(userRegistrationDTO, UserEntity.class);
         mappedEntity.setPassword(passwordEncoder.encode(userRegistrationDTO.getPassword()));
         return mappedEntity;
     }
+
 }

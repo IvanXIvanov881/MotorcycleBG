@@ -25,6 +25,7 @@ public class CronScheduler {
     private final Logger LOGGER = LoggerFactory.getLogger(CronScheduler.class);
 
     //TODO Timer for Cron job
+
     @Scheduled(cron = "1 * * * * *")
     public void onCron() {
 
@@ -38,4 +39,7 @@ public class CronScheduler {
         LOGGER.info("Number of offers: {}", offersList.size());
         LOGGER.info("---------------------------------------------");
     }
+
+    //TODO Cron Scheduler have to delete old user offers.
+
 }

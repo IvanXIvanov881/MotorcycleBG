@@ -18,4 +18,5 @@ public interface ExRateService {
     Optional<BigDecimal> findExRate(String from, String to);
 
     BigDecimal convert(String from, String to, BigDecimal amount);
+
 }

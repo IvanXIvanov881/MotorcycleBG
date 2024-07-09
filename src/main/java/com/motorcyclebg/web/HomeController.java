@@ -1,23 +1,36 @@
 package com.motorcyclebg.web;
 
+import com.motorcyclebg.model.user.MotorcyclebgUserDetails;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.servlet.ModelAndView;
-import java.util.Random;
 
 @Controller
 public class HomeController {
 
     @GetMapping("/")
-    public ModelAndView home() {
+    public String home(@AuthenticationPrincipal UserDetails userDetails,
+                            Model model ) {
 
-        //TODO Not use for now.
-        int someNumber = new Random().nextInt();
-        ModelAndView mnv = new ModelAndView();
-        mnv.setViewName("index");
-        mnv.addObject("TheNumber", someNumber);
-        //<span th:text="${TheNumber}"></span>
-        return mnv;
+        if(userDetails instanceof MotorcyclebgUserDetails motorcyclebgUserDetails) {
+            model.addAttribute("welcomeMessage", motorcyclebgUserDetails.getFullName());
+        } else {
+            model.addAttribute("welcomeMessage", "Guest");
+
+
+        }
+
+        return "index";
     }
 
 }
+
+
+//TODO Not use for now.
+//        int someNumber = new Random().nextInt();
+//        ModelAndView mnv = new ModelAndView();
+//        mnv.setViewName("index");
+//        mnv.addObject("TheNumber", someNumber);
+//        //<span th:text="${TheNumber}"></span>

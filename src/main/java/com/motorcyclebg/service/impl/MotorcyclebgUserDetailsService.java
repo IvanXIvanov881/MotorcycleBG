@@ -1,12 +1,14 @@
 package com.motorcyclebg.service.impl;
 
 import com.motorcyclebg.model.entity.UserEntity;
+import com.motorcyclebg.model.enums.UserRoleEnum;
+import com.motorcyclebg.model.user.MotorcyclebgUserDetails;
 import com.motorcyclebg.repository.UserRepository;
-import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import java.util.List;
 
 public class MotorcyclebgUserDetailsService implements UserDetailsService {
 
@@ -29,11 +31,17 @@ public class MotorcyclebgUserDetailsService implements UserDetailsService {
     }
 
     private static UserDetails map(UserEntity userEntity) {
-        return User.withUsername(userEntity.getEmail())
-                .password(userEntity.getPassword())
-                .authorities(List.of())/*TODO*/
-                .disabled(false)
-                .build();
+        return new MotorcyclebgUserDetails(
+                userEntity.getEmail(),
+                userEntity.getPassword(),
+                userEntity.getRoles().stream().map(r -> r.getRole()).map(MotorcyclebgUserDetailsService::map).toList(),
+                userEntity.getFirstName(),
+                userEntity.getLastName()
+        );
+    }
+
+    private static GrantedAuthority map(UserRoleEnum role) {
+        return new SimpleGrantedAuthority("ROLE_" + role);
     }
 
 }

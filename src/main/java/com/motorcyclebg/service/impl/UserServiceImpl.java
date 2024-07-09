@@ -1,10 +1,8 @@
 package com.motorcyclebg.service.impl;
 
-import com.motorcyclebg.model.dto.UserLoginDTO;
 import com.motorcyclebg.model.dto.UserRegistrationDTO;
 import com.motorcyclebg.model.entity.UserEntity;
 import com.motorcyclebg.repository.UserRepository;
-import com.motorcyclebg.service.CurrentUser;
 import com.motorcyclebg.service.UserService;
 import org.modelmapper.ModelMapper;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -16,16 +14,14 @@ public class UserServiceImpl implements UserService {
     private final ModelMapper modelMapper;
     private final PasswordEncoder passwordEncoder;
     private final UserRepository userRepository;
-    private CurrentUser currentUser;
+
 
     public UserServiceImpl(ModelMapper modelMapper,
                            PasswordEncoder passwordEncoder,
-                           UserRepository userRepository,
-                           CurrentUser currentUser) {
+                           UserRepository userRepository) {
         this.modelMapper = modelMapper;
         this.passwordEncoder = passwordEncoder;
         this.userRepository = userRepository;
-        this.currentUser = currentUser;
     }
 
     @Override

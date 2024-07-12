@@ -8,6 +8,7 @@ public record OfferDetailsDTO(Long id,
                              Integer mileage,
                              Integer price,
                              EngineTypeEnum engineType,
-                              List<String> allCurrencies) {
+                              List<String> allCurrencies,
+                              List<String> images) {
 
 }

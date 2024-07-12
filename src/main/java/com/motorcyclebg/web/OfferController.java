@@ -1,6 +1,7 @@
 package com.motorcyclebg.web;
 
 import com.motorcyclebg.model.dto.AddOfferDTO;
+import com.motorcyclebg.model.dto.OfferDetailsDTO;
 import com.motorcyclebg.model.enums.EngineTypeEnum;
 import com.motorcyclebg.service.OfferService;
 import com.motorcyclebg.service.exception.ObjectNotFoundException;
@@ -32,7 +33,7 @@ public class OfferController {
     public String newOffer(Model model) {
 
         if (!model.containsAttribute("addOfferDTO")) {
-            model.addAttribute("addOfferDTO", AddOfferDTO.empty());
+            model.addAttribute("addOfferDTO", new AddOfferDTO());
         }
         return "offer-add";
     }
@@ -53,14 +54,23 @@ public class OfferController {
         return "redirect:/offers/all";
     }
 
-
     @GetMapping("/details/{id}")
     public String offerDetails(@PathVariable("id") Long id,
                                Model model) {
 
-        model.addAttribute("offerDetails", offerService.getOfferDetails(id));
+        OfferDetailsDTO offerDetailsDTO = offerService.getOfferDetails(id);
+        model.addAttribute("offerDetails", offerDetailsDTO);
+        System.out.println();
 
         return "details";
+    }
+
+    @DeleteMapping("/details/{id}")
+    public String deleteOffer(@PathVariable("id") Long id) {
+
+        offerService.deleteOffer(id);
+
+        return "redirect:/offers/all";
     }
 
     //TODO that method is for delete (we using globalExceptionHandler)
@@ -73,12 +83,16 @@ public class OfferController {
     //    return modelAndView;
     //  }
 
-    @DeleteMapping("/details/{id}")
-    public String deleteOffer(@PathVariable("id") Long id) {
 
-        offerService.deleteOffer(id);
+    //TODO Fix that
+    @PatchMapping("/details/{id}")
+    public String editOfferDetails(@PathVariable("id") Long id,
+                                   Model model) {
 
-        return "redirect:/offers/all";
+        model.addAttribute("editOfferDetails", offerService.getOfferDetails(id));
+
+        return "details";
     }
+
 
 }

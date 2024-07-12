@@ -67,7 +67,8 @@ public class OfferServiceImpl implements OfferService {
                 offerEntity.getMileage(),
                 offerEntity.getPrice(),
                 offerEntity.getEngine(),
-                exRateService.allSupportedCurrencies()
+                exRateService.allSupportedCurrencies(),
+                offerEntity.getImages()
         );
     }
 
@@ -76,10 +77,11 @@ public class OfferServiceImpl implements OfferService {
 
         //TODO: we have to use ModelMapper
         return new OfferEntity()
-                .setDescription(addOfferDTO.description())
-                .setEngine(addOfferDTO.engineType())
-                .setMileage(addOfferDTO.mileage())
-                .setPrice(addOfferDTO.price());
+                .setDescription(addOfferDTO.getDescription())
+                .setEngine(addOfferDTO.getEngineType())
+                .setMileage(addOfferDTO.getMileage())
+                .setPrice(addOfferDTO.getPrice())
+                .setImages(addOfferDTO.getImages());
     }
 
 }

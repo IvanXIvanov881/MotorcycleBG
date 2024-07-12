@@ -14,5 +14,4 @@ public interface OfferService {
     void deleteOffer(long offerId);
 
     List<OfferSummaryDTO> getAllOffersSummary();
-
 }

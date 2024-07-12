@@ -7,12 +7,12 @@ import com.motorcyclebg.model.entity.OfferEntity;
 import com.motorcyclebg.repository.OfferRepository;
 import com.motorcyclebg.service.ExRateService;
 import com.motorcyclebg.service.OfferService;
+import com.motorcyclebg.service.exception.ObjectNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-
 public class OfferServiceImpl implements OfferService {
 
     private final OfferRepository offerRepository;
@@ -35,7 +35,7 @@ public class OfferServiceImpl implements OfferService {
         return this.offerRepository
                 .findById(id)
                 .map(this::toOfferDetails)
-                .orElseThrow();
+                .orElseThrow(()-> new ObjectNotFoundException("PROBLEM", id));
     }
 
     @Override

@@ -43,5 +43,6 @@ public class MotorcyclebgUserDetailsService implements UserDetailsService {
     private static GrantedAuthority map(UserRoleEnum role) {
         return new SimpleGrantedAuthority("ROLE_" + role);
     }
-
 }
+
+

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 
 <head>
     <meta charset="UTF-8">
@@ -29,35 +29,32 @@
             </div>
             <ul class="offer-details list-group list-group-flush">
                 <li class="list-group-item">
-                    <div class="card-text">• Mileage: <span th:text="*{mileage}">N/A</span></div>
-                    <div class="card-text">• Engine type: <span th:text="*{engineType}">N/A</span></div>
-                    <div class="card-text">• Transmission type: <span>N/A</span></div>
-                    <div class="card-text">• Offer created: <span>N/A</span></div>
-                    <div class="card-text">• Offer modified: <span>N/A</span></div>
-                    <div class="card-text">• Seller - First and Last name: <span>N/A</span></div>
-                    <div class="card-text">• Price: <span id="price" th:text="*{price}">N/A</span></div>
+                    <div class="card-text">• Mileage <span th:text="*{mileage}">Mileage</span></div>
+                    <div class="card-text">• Price <span id="price" th:text="*{price}">Price</span></div>
+                    <div class="card-text">• Engine type <span th:text="*{engineType}">Engine type</span></div>
+                    <div class="card-text"><span>• Transmission type</span></div>
                     <div class="card-text">• Currency
                         <select id="currency">
                             <option
-                                th:each="currency : *{allCurrencies}"
-                                th:value="${currency}"
-                                th:selected="${currency} == 'BGN'"
-                                th:text="${currency}"
+                                    th:each="currency : *{allCurrencies}"
+                                    th:value="${currency}"
+                                    th:selected="${currency} == 'BGN'"
+                                    th:text="${currency}"
                             >
+
                             </option>
                         </select>
                     </div>
                 </li>
             </ul>
             <input type="hidden" id="priceInBGN" th:value="*{price}">
-
             <div class="card-body">
                 <a class="card-link" href="/">Update</a>
-                <form th:method="delete"
-                      th:action="@{/offers/{id}(id=*{id})}">
-                    <input class="btn btn-link" type="submit" value="Delete"/>
+                <form sec:authorize="hasRole('ADMIN')"
+                      th:method="delete"
+                      th:action="@{/offers/details/{id}(id=*{id})}">
+                    <input class="btn btn-link" type="submit" value="delete"/>
                 </form>
-
             </div>
         </div>
         <div class="offer card col-sm-2 col-md-3  col-lg-4 m-1 p-0">

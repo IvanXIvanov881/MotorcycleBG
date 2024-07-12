@@ -6,7 +6,7 @@ import jakarta.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "roles")
-public class UserRoleEntity {
+public class UserRoleEntity  {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

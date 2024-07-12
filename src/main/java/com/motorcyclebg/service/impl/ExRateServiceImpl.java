@@ -5,12 +5,13 @@ import com.motorcyclebg.model.dto.ExRatesDTO;
 import com.motorcyclebg.model.entity.ExRateEntity;
 import com.motorcyclebg.repository.ExRateRepository;
 import com.motorcyclebg.service.ExRateService;
-import org.hibernate.ObjectNotFoundException;
+import com.motorcyclebg.service.exception.ApiObjectNotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClient;
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.List;
@@ -110,8 +111,7 @@ public class ExRateServiceImpl implements ExRateService {
     @Override
     public BigDecimal convert(String from, String to, BigDecimal amount) {
         return findExRate(from, to)
-                .orElseThrow(() -> new ObjectNotFoundException((Object) to, "Conversion from " + from + " to " + to + " not possible!"))
+                .orElseThrow(() -> new ApiObjectNotFoundException("Conversion from " + from + " to " + to + " not possible!", from + "~" + to))
                 .multiply(amount);
     }
-
 }

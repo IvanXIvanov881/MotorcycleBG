@@ -1,9 +1,16 @@
 package com.motorcyclebg.model.dto;
 
-import com.motorcyclebg.model.enums.EngineTypeEnum;
+import com.motorcyclebg.model.enums.BrandTypeEnum;
+
+import java.util.List;
 
 public record OfferSummaryDTO(Long id,
-                              String description,
+                              BrandTypeEnum brandType,
                               Integer mileage,
-                              EngineTypeEnum engineType) {
+                              Integer year,
+                              //String description,
+                              //EngineTypeEnum engineType,
+                              //TransmissionTypeEnum transmissionType,
+                              Integer price,
+                              List<String> allCurrencies) {
 }

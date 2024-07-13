@@ -16,7 +16,7 @@ import java.util.List;
 public class OfferServiceImpl implements OfferService {
 
     private final OfferRepository offerRepository;
-    private ExRateService exRateService;
+    private static ExRateService exRateService;
 
     public OfferServiceImpl(OfferRepository offerRepository,
                             ExRateService exRateService) {
@@ -35,7 +35,7 @@ public class OfferServiceImpl implements OfferService {
         return this.offerRepository
                 .findById(id)
                 .map(this::toOfferDetails)
-                .orElseThrow(()-> new ObjectNotFoundException("PROBLEM", id));
+                .orElseThrow(()-> new ObjectNotFoundException("We have a problem... Id: ", id));
     }
 
     @Override
@@ -55,18 +55,32 @@ public class OfferServiceImpl implements OfferService {
     private static OfferSummaryDTO toOfferSummary(OfferEntity offerEntity){
         //TODO use mapping library
         return new OfferSummaryDTO(offerEntity.getId(),
-                offerEntity.getDescription(),
+                offerEntity.getBrand(),
                 offerEntity.getMileage(),
-                offerEntity.getEngine());
+                offerEntity.getYear(),
+                //offerEntity.getDescription(),
+                //offerEntity.getEngine(),
+                //offerEntity.getTransmission(),
+                offerEntity.getPrice(),
+                exRateService.allSupportedCurrencies()
+        );
     }
 
     private OfferDetailsDTO toOfferDetails(OfferEntity offerEntity){
         //TODO use mapping library
-        return new OfferDetailsDTO(offerEntity.getId(),
-                offerEntity.getDescription(),
+        return new OfferDetailsDTO(
+                offerEntity.getId(),
+                offerEntity.getBrand(),
+                offerEntity.getCategory(),
+                offerEntity.getCubicCentimeters(),
                 offerEntity.getMileage(),
-                offerEntity.getPrice(),
+                offerEntity.getYear(),
                 offerEntity.getEngine(),
+                offerEntity.getTransmission(),
+                offerEntity.getConditionType(),
+                offerEntity.getColor(),
+                offerEntity.getDescription(),
+                offerEntity.getPrice(),
                 exRateService.allSupportedCurrencies(),
                 offerEntity.getImages()
         );
@@ -77,10 +91,17 @@ public class OfferServiceImpl implements OfferService {
 
         //TODO: we have to use ModelMapper
         return new OfferEntity()
+                .setBrand(addOfferDTO.getBrandType())
+                .setCategory(addOfferDTO.getCategoryType())
                 .setDescription(addOfferDTO.getDescription())
                 .setEngine(addOfferDTO.getEngineType())
+                .setCubicCentimeters(addOfferDTO.getCubicCentimeters())
+                .setTransmission(addOfferDTO.getTransmissionType())
                 .setMileage(addOfferDTO.getMileage())
+                .setYear(addOfferDTO.getYear())
                 .setPrice(addOfferDTO.getPrice())
+                .setConditionType(addOfferDTO.getConditionType())
+                .setColor(addOfferDTO.getColor())
                 .setImages(addOfferDTO.getImages());
     }
 

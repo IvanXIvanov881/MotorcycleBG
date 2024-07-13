@@ -2,16 +2,13 @@ package com.motorcyclebg.web;
 
 import com.motorcyclebg.model.dto.AddOfferDTO;
 import com.motorcyclebg.model.dto.OfferDetailsDTO;
-import com.motorcyclebg.model.enums.EngineTypeEnum;
+import com.motorcyclebg.model.enums.*;
 import com.motorcyclebg.service.OfferService;
-import com.motorcyclebg.service.exception.ObjectNotFoundException;
 import jakarta.validation.Valid;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
@@ -24,10 +21,31 @@ public class OfferController {
         this.offerService = offerService;
     }
 
+    @ModelAttribute("allBrandTypes")
+    public BrandTypeEnum[] allBrandTypes() {
+        return BrandTypeEnum.values();
+    }
+
+    @ModelAttribute("allCategoryTypes")
+    public CategoryTypeEnum[] allCategoryTypes() {
+        return CategoryTypeEnum.values();
+    }
+
     @ModelAttribute("allEngineTypes")
     public EngineTypeEnum[] allEngineTypes() {
         return EngineTypeEnum.values();
     }
+
+    @ModelAttribute("allTransmissionTypes")
+    public TransmissionTypeEnum[] allTransmissionTypes() {
+        return TransmissionTypeEnum.values();
+    }
+
+    @ModelAttribute("allConditionTypes")
+    public ConditionTypeEnum[] allConditionTypes() {
+        return ConditionTypeEnum.values();
+    }
+
 
     @GetMapping("/add")
     public String newOffer(Model model) {
@@ -73,18 +91,7 @@ public class OfferController {
         return "redirect:/offers/all";
     }
 
-    //TODO that method is for delete (we using globalExceptionHandler)
-    //@ResponseStatus(code = HttpStatus.NOT_FOUND)
-    //  @ExceptionHandler(ObjectNotFoundException.class)
-    //  public ModelAndView handleObjectNotFound(ObjectNotFoundException onfe) {
-    //    ModelAndView modelAndView = new ModelAndView("offer-not-found");
-    //    modelAndView.addObject("offerId", onfe.getId());
-    //
-    //    return modelAndView;
-    //  }
-
-
-    //TODO Fix that
+    //TODO Fix that "update" of offer
     @PatchMapping("/details/{id}")
     public String editOfferDetails(@PathVariable("id") Long id,
                                    Model model) {
@@ -94,5 +101,14 @@ public class OfferController {
         return "details";
     }
 
+    //TODO that method is for delete (we using globalExceptionHandler)
+    //@ResponseStatus(code = HttpStatus.NOT_FOUND)
+    //  @ExceptionHandler(ObjectNotFoundException.class)
+    //  public ModelAndView handleObjectNotFound(ObjectNotFoundException onfe) {
+    //    ModelAndView modelAndView = new ModelAndView("offer-not-found");
+    //    modelAndView.addObject("offerId", onfe.getId());
+    //
+    //    return modelAndView;
+    //  }
 
 }

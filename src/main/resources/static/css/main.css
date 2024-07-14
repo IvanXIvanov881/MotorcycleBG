@@ -76,3 +76,22 @@ footer p{
 color:#FFF;
 margin-bottom: 0;
 }
+
+.gallery-buttons{
+display: flex;
+flex: 1 1 100%;
+justify-content: space-between;
+align-items: center;
+}
+
+#prev, #next {
+height: 5em;
+width: 5em;
+}
+
+.regbutton{
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: flex-end;
+}

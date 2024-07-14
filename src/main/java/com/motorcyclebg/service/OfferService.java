@@ -3,7 +3,6 @@ package com.motorcyclebg.service;
 import com.motorcyclebg.model.dto.AddOfferDTO;
 import com.motorcyclebg.model.dto.OfferDetailsDTO;
 import com.motorcyclebg.model.dto.OfferSummaryDTO;
-
 import java.util.List;
 
 public interface OfferService {

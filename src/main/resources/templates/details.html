@@ -6,6 +6,7 @@
     <title>MotorcycleBG</title>
     <link rel="stylesheet" href="/css/reset-css.css"/>
     <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/css/main.css"/>
     <script src="/js/jquery-3.5.1.slim.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
@@ -21,26 +22,37 @@
     <div
             th:object="${offerDetails}"
             class="offers row mx-auto d-flex flex-row justify-content-center">
+
         <div class="offer card col-sm-2 col-md-3  col-lg-4 m-1 p-0">
 
             <div class="card-body pb-1">
                 <h5 class="card-title">
-                    Offer year Brand name Model name</h5>
+                    <div class="card-text"><strong><span th:text="*{brandType}">Brand</span></strong></div>
+                </h5>
             </div>
             <ul class="offer-details list-group list-group-flush">
                 <li class="list-group-item">
-<!--Cubic centimeters, Category, Color, Condition-->
-                    <div class="card-text">• Brand: <span th:text="*{brandType}">Brand</span></div>
-                    <div class="card-text">• Category: <span th:text="*{categoryType}">Category</span></div>
-                    <div class="card-text">• Condition: <span th:text="*{conditionType}">Condition</span></div>
-                    <div class="card-text">• Year: <span th:text="*{year}">Year</span></div>
-                    <div class="card-text">• Mileage: <span th:text="*{mileage}">Mileage</span></div>
-                    <div class="card-text">• Engine type: <span th:text="*{engineType}">Engine type</span></div>
-                    <div class="card-text">• Cubic centimeters: <span th:text="*{cubicCentimeters}">Cubic centimeters</span></div>
-                    <div class="card-text">• Transmission type: <span th:text="*{transmissionType}">Transmission type</span></div>
-                    <div class="card-text">• Color: <span th:text="*{color}">Color</span></div>
-                    <div class="card-text">• Description: <span th:text="*{description}">Description</span></div>
-                    <div class="card-text">• Price: <span id="price" th:text="*{price}">Price</span>
+                    <!--Cubic centimeters, Category, Color, Condition-->
+                    <br>
+                    <div class="card-text"><strong>• Category: </strong><span th:text="*{categoryType}">Category</span></div>
+
+                    <div class="card-text"><strong>• Condition: </strong><span th:text="*{conditionType}">Condition</span></div>
+
+                    <div class="card-text"><strong>• Year: </strong><span th:text="*{year}">Year</span></div>
+
+                    <div class="card-text"><strong>• Mileage: </strong><span th:text="*{mileage}">Mileage</span></div>
+
+                    <div class="card-text"><strong>• Engine type: </strong><span th:text="*{engineType}">Engine type</span></div>
+
+                    <div class="card-text"><strong>• Cubic centimeters: </strong><span th:text="*{cubicCentimeters}">Cubic centimeters</span> ccm</div>
+
+                    <div class="card-text"><strong>• Transmission type: </strong><span th:text="*{transmissionType}">Transmission type</span></div>
+
+                    <div class="card-text"><strong>• Color: </strong><span th:text="*{color}">Color</span></div>
+                    <br>
+                    <div class="card-text"><strong>• Description: </strong><span th:text="*{description}">Description</span></div>
+                    <br>
+                    <div class="card-text"><strong>• Price: </strong><span id="price" th:text="*{price}">Price</span>
                         <select id="currency">
                             <option
                                     th:each="currency : *{allCurrencies}"
@@ -52,7 +64,6 @@
                             </option>
                         </select>
                     </div>
-
                 </li>
             </ul>
             <input type="hidden" id="priceInBGN" th:value="*{price}">
@@ -66,17 +77,21 @@
                 </form>
             </div>
         </div>
+
         <div class="offer card col-sm-2 col-md-3  col-lg-4 m-1 p-0">
             <!--            <img src="/" class="card-img-top" alt="Motorcycle image">-->
             <div class="gallery">
                 <img id="device-image" src="/" class="card-img-top img-thumbnail" alt="Device Image">
             </div>
+
             <div class="gallery-buttons">
                 <button id="prev" class="gallery-button"><i class="fa-solid fa-arrow-left"></i></button>
                 <div id="thumbnails" class="d-flex justify-content-center align-items flex-wrap mt-2"></div>
                 <button id="next" class="gallery-button"><i class="fa-solid fa-arrow-right"></i></button>
             </div>
+
         </div>
+
     </div>
 </div>
 
@@ -134,8 +149,6 @@
         updateImage();
         createThumbnails();
     });
-
-
 
 </script>
 

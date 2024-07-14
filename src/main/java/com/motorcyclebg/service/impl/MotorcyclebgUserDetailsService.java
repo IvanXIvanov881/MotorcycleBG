@@ -23,7 +23,7 @@ public class MotorcyclebgUserDetailsService implements UserDetailsService {
             throws UsernameNotFoundException {
 
         return userRepository
-                .findByEmail(email)
+                .findUserByEmail(email)
                 .map(MotorcyclebgUserDetailsService::map)
                 .orElseThrow(
                         () -> new UsernameNotFoundException("User with email " + email + " not found!"));

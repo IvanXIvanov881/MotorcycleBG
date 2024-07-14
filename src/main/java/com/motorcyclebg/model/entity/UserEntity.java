@@ -1,13 +1,16 @@
 package com.motorcyclebg.model.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
 @Table(name = "users")
 public class UserEntity extends BaseEntity {
-    @Column(unique = true)
+    @Column(unique = true, nullable = false)
+    @Email
     private String email;
 
     private String password;

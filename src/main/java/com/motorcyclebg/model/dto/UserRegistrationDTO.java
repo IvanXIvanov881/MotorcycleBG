@@ -1,21 +1,29 @@
 package com.motorcyclebg.model.dto;
 
+import com.motorcyclebg.vallidation.annotation.FieldsMatch;
+import com.motorcyclebg.vallidation.annotation.UniqueEmail;
 import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
+
+@FieldsMatch(first = "password",
+        second = "confirmPassword")
 
 public class UserRegistrationDTO {
 
-    @NotEmpty
-    @Size(min=1,max=50)
+    @Size(min = 3, max = 50)
+    @NotBlank(message = "{add.first.name.cannot.be.not.empty}")
     private String firstName;
-    @NotEmpty
-    @Size(min=1,max=50)
+    @Size(min = 3, max = 50)
+    @NotBlank(message = "{add.last.name.cannot.be.not.empty}")
     private String lastName;
-    @NotEmpty
+    @NotBlank(message = "{add.password.cannot.be.not.empty}")
     private String password;
-    @NotEmpty
+    @NotBlank(message = "{add.password.cannot.be.not.empty}")
+    private String confirmPassword;
+    @NotBlank(message = "{add.email.cannot.be.not.empty}")
     @Email
+    @UniqueEmail
     private String email;
 
     public String getFirstName() {
@@ -42,6 +50,15 @@ public class UserRegistrationDTO {
 
     public UserRegistrationDTO setPassword(String password) {
         this.password = password;
+        return this;
+    }
+
+    public String getConfirmPassword() {
+        return confirmPassword;
+    }
+
+    public UserRegistrationDTO setConfirmPassword(String confirmPassword) {
+        this.confirmPassword = confirmPassword;
         return this;
     }
 

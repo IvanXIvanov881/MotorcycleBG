@@ -59,7 +59,7 @@
                 <!--                    Vehicle model is required.-->
                 <!--                </p>-->
                 <small
-                        th:errors="*{engineType}" class="text-danger">Engine type error
+                        th:errors="*{brandType}" class="text-danger">Brand type error
                 </small>
             </div>
 
@@ -93,7 +93,7 @@
                         <option th:each="type: ${allCategoryTypes}"
                                 th:value="${type}"
                                 th:text="${type}">
-                            Engine type
+                            Category type
                         </option>
                     </optgroup>
                 </select>
@@ -252,10 +252,6 @@
         <div class="row">
 
             <div class="form-group col-md-6 mb-3">
-                <h3 th:classappend="${#fields.hasErrors('images')} ? 'bg-danger' : ''" class="text-center text-white">
-                    Images
-                </h3>
-
                 <!--                <div class="row device-images pb-1">-->
                 <div id="image-inputs" class="col-md-12">
                     <div th:each="image, iterStat : ${addOfferDTO.images}">
@@ -273,7 +269,7 @@
                     </div>
                 </div>
                 <div class="col-md-12">
-                    <button type="button" class="btn btn-primary" id="add-image-button">Add Image</button>
+                    <button type="button" class="btn btn-info btn-lg" id="add-image-button">Add Image</button>
                 </div>
                 <!--                </div>-->
             </div>

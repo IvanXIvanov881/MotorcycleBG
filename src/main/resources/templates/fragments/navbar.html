@@ -30,13 +30,36 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="/offers/add" th:classappend="${activeLink == 'add-offer'}? 'active'">Add
-                        Offer</a>
+                    <a class="nav-link" href="/parts/add" th:classappend="${activeLink == 'add-parts'}? 'active'">Add
+                        Parts</a>
                 </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/equipments/add" th:classappend="${activeLink == 'add-equipment'}? 'active'">Add
+                        Equipment</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/offers/add" th:classappend="${activeLink == 'add-offer'}? 'active'">Add
+                        Motorcycle</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/equipments/all" th:classappend="${activeLink == 'all-equipments'}? 'active'">All
+                        Equipments</a>
+                </li>
+
                 <li class="nav-item">
                     <a class="nav-link" href="/offers/all" th:classappend="${activeLink == 'all-offers'}? 'active'">All
-                        Offers</a>
+                        Motorcycles</a>
                 </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/parts/all" th:classappend="${activeLink == 'all-parts'}? 'active'">All
+                        Parts</a>
+                </li>
+
+
                 <li class="nav-item dropdown" sec:authorize="hasRole('ADMIN')">
                     <a class="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button"
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

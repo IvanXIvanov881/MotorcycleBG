@@ -3,15 +3,17 @@ package com.motorcyclebg.service;
 import com.motorcyclebg.model.dto.AddOfferDTO;
 import com.motorcyclebg.model.dto.OfferDetailsDTO;
 import com.motorcyclebg.model.dto.OfferSummaryDTO;
+
 import java.util.List;
 
-public interface OfferService {
+public interface PartsService {
 
-    long createOffer(AddOfferDTO addOfferDTO);
+    long createParts(AddOfferDTO addOfferDTO);
 
-    OfferDetailsDTO getOfferDetails(Long id);
+    OfferDetailsDTO getOfferParts(Long id);
 
-    void deleteOffer(long offerId);
+    void deleteParts(long offerId);
 
-    List<OfferSummaryDTO> getAllOffersSummary();
+    List<OfferSummaryDTO> getAllPartsSummary();
+
 }

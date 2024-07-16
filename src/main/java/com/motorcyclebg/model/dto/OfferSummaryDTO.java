@@ -8,9 +8,6 @@ public record OfferSummaryDTO(Long id,
                               Integer mileage,
                               Integer year,
                               Integer cubicCentimeters,
-                              //String description,
-                              //EngineTypeEnum engineType,
-                              //TransmissionTypeEnum transmissionType,
                               Integer price,
                               List<String> allCurrencies) {
 }

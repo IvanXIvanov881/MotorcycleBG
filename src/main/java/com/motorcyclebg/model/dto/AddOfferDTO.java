@@ -35,8 +35,8 @@ public class AddOfferDTO {
     @Size(message = "{add.offer.color.size}", max = 100)
     private String color;
 
-
     private List<@URL @NotBlank String> images;
+
 
     public AddOfferDTO() {
     }

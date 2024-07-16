@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface EquipmentService {
 
-    long createEquipment(AddEquipmentDTO addOfferDTO);
+    long createEquipment(AddEquipmentDTO addEquipmentDTO);
 
     EquipmentDetailsDTO getEquipmentDetails(Long id);
 

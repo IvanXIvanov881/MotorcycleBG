@@ -78,7 +78,6 @@ public class OfferController {
 
         OfferDetailsDTO offerDetailsDTO = offerService.getOfferDetails(id);
         model.addAttribute("offerDetails", offerDetailsDTO);
-        System.out.println();
 
         return "details";
     }
@@ -91,6 +90,13 @@ public class OfferController {
         return "redirect:/offers/all";
     }
 
+    @GetMapping("/all")
+    public String getAllOffers(Model model){
+
+        model.addAttribute("allOffers", offerService.getAllOffersSummary());
+        return "offers";
+    }
+
     //TODO Fix that "update" of offer
     @PatchMapping("/details/{id}")
     public String editOfferDetails(@PathVariable("id") Long id,
@@ -101,7 +107,9 @@ public class OfferController {
         return "details";
     }
 
+
     //TODO that method is for delete (we using globalExceptionHandler)
+
     //@ResponseStatus(code = HttpStatus.NOT_FOUND)
     //  @ExceptionHandler(ObjectNotFoundException.class)
     //  public ModelAndView handleObjectNotFound(ObjectNotFoundException onfe) {

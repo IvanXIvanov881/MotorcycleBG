@@ -16,7 +16,7 @@
 <div th:replace="~{fragments/navbar::navbar(activeLink=${'all-offers'})}"></div>
 
 <div class="container-fluid">
-    <h2 class="text-center text-white mt-5">All Offers</h2>
+    <h2 class="text-center text-black mt-5">All Motorcycles</h2>
     <div
             th:each="offer : ${allOffers}"
             th:object="${offer}"

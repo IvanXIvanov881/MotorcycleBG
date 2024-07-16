@@ -65,7 +65,6 @@ public class EquipmentController {
 
         EquipmentDetailsDTO equipmentDetailsDTO = equipmentService.getEquipmentDetails(id);
         model.addAttribute("equipmentDetails", equipmentDetailsDTO);
-        System.out.println();
 
         return "equipment-details";
     }
@@ -76,6 +75,13 @@ public class EquipmentController {
         equipmentService.deleteEquipment(id);
 
         return "redirect:/equipments/all";
+    }
+
+    @GetMapping("/all")
+    public String getAllEquipments(Model model){
+
+        model.addAttribute("allEquipments", equipmentService.getAllEquipmentSummary());
+        return "equipments";
     }
 
     //TODO Fix that "update" of equipment

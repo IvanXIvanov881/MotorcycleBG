@@ -14,12 +14,6 @@
 <div th:fragment="navbar(activeLink)">
 
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
-        <a class="navbar-brand" href="/"><img alt="motorcycle picture" src="/images/moto.png" class="logo"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto col-12 justify-content-between">
@@ -30,8 +24,8 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="/parts/add" th:classappend="${activeLink == 'add-parts'}? 'active'">Add
-                        Parts</a>
+                    <a class="nav-link" href="/offers/add" th:classappend="${activeLink == 'add-offer'}? 'active'">Add
+                        Motorcycle</a>
                 </li>
 
                 <li class="nav-item">
@@ -40,18 +34,25 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="/offers/add" th:classappend="${activeLink == 'add-offer'}? 'active'">Add
-                        Motorcycle</a>
+                    <a class="nav-link" href="/parts/add" th:classappend="${activeLink == 'add-parts'}? 'active'">Add
+                        Parts</a>
+                </li>
+
+                <a class="navbar-brand" href="/"><img alt="motorcycle picture" src="/images/vecteezy_vintage-bike-logo-cartoon-with_24207632.png" class="logo">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                </a>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/offers/all" th:classappend="${activeLink == 'all-offers'}? 'active'">All
+                        Motorcycles</a>
                 </li>
 
                 <li class="nav-item">
                     <a class="nav-link" href="/equipments/all" th:classappend="${activeLink == 'all-equipments'}? 'active'">All
                         Equipments</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="/offers/all" th:classappend="${activeLink == 'all-offers'}? 'active'">All
-                        Motorcycles</a>
                 </li>
 
                 <li class="nav-item">

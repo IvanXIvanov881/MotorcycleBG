@@ -16,7 +16,7 @@
 <div th:replace="~{fragments/navbar::navbar(activeLink=${'all-equipments'})}"></div>
 
 <div class="container-fluid">
-    <h2 class="text-center text-white mt-5">All Equipments</h2>
+    <h2 class="text-center text-black mt-5">All Equipments</h2>
     <div
             th:each="equipment : ${allEquipments}"
             th:object="${equipment}"
@@ -30,7 +30,7 @@
 
             <div class="card-body pb-1">
                 <h5 class="card-title">
-                    <div class="card-text"><strong><span th:text="*{equipmentBrand()}">Equipment brand</span></strong></div>
+                    <div class="card-text"><strong><span th:text="*{equipmentBrand()}"> Equipment brand </span></strong></div>
                 </h5>
             </div>
 
@@ -64,7 +64,7 @@
             <input type="hidden" id="priceInBGN" th:value="*{equipmentPrice}">
 
             <div class="card-body">
-                <a th:href="@{/equipment/equipment-details/{id}/details(id=3,action='show_all')}"/>
+                <a th:href="@{/equipments/equipment-details/{id}/details(id=3,action='show_all')}"/>
 
                 <a class="card-link" th:href="@{/equipments/details/{id}(id=*{id})}">Details</a>
             </div>

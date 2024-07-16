@@ -3,20 +3,27 @@ height: 100%;
 margin: 0;
 }
 
+.thatIsFromBody .TODO{
+ background-image: url('/images/1.jpg');
+ background-color: #464646;
+}
+
 body {
-     background-image: url('/images/1.jpg');
+
      background-position: center center;
      background-repeat: no-repeat;
      background-attachment: fixed;
      background-size: cover;
-     background-color: #464646;
+     background-color: #ececec;
      display: flex;
      flex-direction: column;
  }
 
+
 .navbar .logo {
      max-height: 50px;
      padding-right: 100px;
+     padding-left: 100px;
 }
 
 .container, .container-fluid {
@@ -95,4 +102,16 @@ flex-direction: column;
 align-items: center;
 justify-content: flex-end;
 }
+
+.card {
+border: 1px solid;
+padding: 10px;
+box-shadow: 5px 10px;
+}
+
+.text-center{
+color: #00131c;
+size:2em;
+}
+
 

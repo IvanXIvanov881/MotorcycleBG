@@ -1,19 +1,19 @@
 package com.motorcyclebg.service;
 
-import com.motorcyclebg.model.dto.AddOfferDTO;
-import com.motorcyclebg.model.dto.OfferDetailsDTO;
-import com.motorcyclebg.model.dto.OfferSummaryDTO;
+import com.motorcyclebg.model.dto.AddPartsDTO;
+import com.motorcyclebg.model.dto.PartsDetailsDTO;
+import com.motorcyclebg.model.dto.PartsSummaryDTO;
 
 import java.util.List;
 
 public interface PartsService {
 
-    long createParts(AddOfferDTO addOfferDTO);
+    long createParts(AddPartsDTO addPartsDTO);
 
-    OfferDetailsDTO getOfferParts(Long id);
+    PartsDetailsDTO getPartsDetails(Long id);
 
     void deleteParts(long offerId);
 
-    List<OfferSummaryDTO> getAllPartsSummary();
+    List<PartsSummaryDTO> getAllPartsSummary();
 
 }

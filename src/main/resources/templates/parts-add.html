@@ -2,17 +2,171 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 
 <head>
-  <meta charset="UTF-8">
-  <title>MotorcycleBG</title>
-  <link rel="stylesheet" href="/css/reset-css.css"/>
-  <link rel="stylesheet" href="/css/bootstrap.min.css"/>
-  <link rel="stylesheet" type="text/css" href="/css/main.css"/>
-  <script src="/js/jquery-3.5.1.slim.min.js"></script>
-  <script src="/js/bootstrap.min.js"></script>
-  <script src="/js/addImageInput.js" defer></script>
+    <meta charset="UTF-8">
+    <title>MotorcycleBG</title>
+    <link rel="stylesheet" href="/css/reset-css.css"/>
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/main.css"/>
+    <script src="/js/jquery-3.5.1.slim.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/addImageInput.js" defer></script>
 </head>
 
 <body>
+
+<div th:replace="~{fragments/navbar::navbar(activeLink=${'add-equipment'})}"></div>
+
+<div class="container">
+    <h2 class="text-center text-black"> Upload Parts </h2>
+    <form
+            th:action="@{/parts/add}"
+            th:method="post"
+            th:object="${addPartsDTO}"
+            class="main-form mx-auto col-md-8 d-flex flex-column justify-content-center">
+
+        <div class="row">
+
+            <div class="form-group col-md-6 mb-3">
+
+                <label class="text-center text-white font-weight-bold" th:for="partsType">
+                    Parts Type</label>
+                <select th:field="*{partsType}"
+                        th:errorclass="is-invalid"
+                        class="form-control">
+                    <option value="">- Select parts type -</option>
+                    <optgroup label="Type">
+                        <option th:each="type: ${allPartsTypes}"
+                                th:value="${type}"
+                                th:text="${type}">
+                            Parts type
+                        </option>
+                    </optgroup>
+                </select>
+                <!--                <p class="invalid-feedback errors alert alert-danger">-->
+                <!--                    Condition type is required.-->
+                <!--                </p>-->
+                <small
+                        th:errors="*{partsType}" class="text-danger">Condition type error
+                </small>
+            </div>
+
+            <div class="form-group col-md-6 mb-3">
+                <label th:for="partsBrand" class="text-white font-weight-bold">Parts brand</label>
+                <input th:field="*{partsBrand}"
+                       th:errorclass="is-invalid"
+                       type="text"
+                       class="form-control"
+                       placeholder="Parts brand"/>
+
+                <small
+                        th:errors="*{partsBrand}" class="text-danger">Parts brand error
+                </small>
+            </div>
+
+
+        </div>
+
+        <div class="row">
+
+            <div class="form-group col-md-6 mb-3">
+
+                <label class="text-center text-white font-weight-bold" th:for="partsConditionType">
+                    Parts Condition</label>
+                <select th:field="*{partsConditionType}"
+                        th:errorclass="is-invalid"
+                        class="form-control">
+                    <option value="">- Select parts condition type -</option>
+                    <optgroup label="Condition type">
+                        <option th:each="type: ${allPartsConditionTypes}"
+                                th:value="${type}"
+                                th:text="${type}">
+                            Parts condition
+                        </option>
+                    </optgroup>
+                </select>
+                <!--                <p class="invalid-feedback errors alert alert-danger">-->
+                <!--                    Condition type is required.-->
+                <!--                </p>-->
+                <small
+                        th:errors="*{partsConditionType}" class="text-danger">Condition type error
+                </small>
+            </div>
+
+            <div class="form-group col-md-6 mb-3">
+                <label th:for="partsPrice" class="text-white font-weight-bold">Parts Price (BGN)</label>
+                <input th:field="*{PartsPrice}"
+                       th:errorclass="is-invalid"
+                       type="number"
+                       class="form-control"
+                       placeholder="Parts Price in BGN"/>
+                <!--                <p class="invalid-feedback errors alert alert-danger">-->
+                <!--                    Wrong Price information. Have to be 0 or positive number.-->
+                <!--                </p>-->
+                <small
+                        th:errors="*{partsPrice}" class="text-danger">Price type error
+                </small>
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <label class="text-white font-weight-bold" th:for="partsDescription">Parts description</label>
+            <textarea
+                    th:field="*{partsDescription}"
+                    th:errorclass="is-invalid"
+                    type="textarea"
+                    class="form-control"
+                    rows="5"
+                    placeholder="Description">
+
+            </textarea>
+            <!--            <p class="invalid-feedback errors alert alert-danger">-->
+            <!--                Description is required.-->
+            <!--            </p>-->
+            <small
+                    th:errors="*{partsDescription}" class="text-danger">Description error
+            </small>
+        </div>
+
+        <hr class="mt-3 mb-3"/>
+
+        <div class="row">
+
+            <div class="form-group col-md-6 mb-3">
+                <!--                <div class="row device-images pb-1">-->
+                <div id="image-inputs" class="col-md-12">
+                    <div th:each="image, iterStat : ${addPartsDTO.images}">
+                        <div class="input-group mb-3">
+                            <input type="text"
+                                   th:value="${partsImages}" th:field="*{images[__${iterStat.index}__]}"
+                                   class="form-control" placeholder="Image URL"
+                                   th:classappend="${#fields.hasErrors('images[__${iterStat.index}__]')} ? 'text-danger bg-warning' : ''">
+                            <div class="input-group-append">
+                                <!--            Items will be added here                -->
+                                <button class="btn btn-danger" type="button" onclick="removeImageInput(this)">Remove
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <button type="button" class="btn btn-info btn-lg" id="add-image-button">Add Image</button>
+                </div>
+                <!--                </div>-->
+            </div>
+
+            <div class="form-group col-md-6 mb-3">
+                <div class="col col-md-4">
+                    <div class="button-holder d-flex">
+                        <input type="submit" class="btn btn-info btn-lg" value="Submit Parts"/>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </form>
+</div>
 
 
 <div th:replace="~{fragments/footer::footer}"></div>

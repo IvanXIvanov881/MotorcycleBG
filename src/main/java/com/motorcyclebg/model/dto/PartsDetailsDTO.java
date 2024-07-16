@@ -1,7 +1,5 @@
 package com.motorcyclebg.model.dto;
 
-import com.motorcyclebg.model.enums.EquipmentConditionTypeEnum;
-import com.motorcyclebg.model.enums.EquipmentTypeEnum;
 import com.motorcyclebg.model.enums.PartsConditionTypeEnum;
 import com.motorcyclebg.model.enums.PartsTypeEnum;
 
@@ -13,7 +11,8 @@ public record PartsDetailsDTO(
         String partsBrand,
         PartsConditionTypeEnum partsConditionType,
         String partsDescription,
-        Integer equipmentPrice,
-        List<String> allCurrencies
+        Integer partsPrice,
+        List<String> allCurrencies,
+        List<String> images
 ) {
 }

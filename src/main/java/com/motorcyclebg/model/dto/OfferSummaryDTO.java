@@ -9,5 +9,6 @@ public record OfferSummaryDTO(Long id,
                               Integer year,
                               Integer cubicCentimeters,
                               Integer price,
+                              List<String> images,
                               List<String> allCurrencies) {
 }

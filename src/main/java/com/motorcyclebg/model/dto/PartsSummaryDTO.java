@@ -8,6 +8,7 @@ public record PartsSummaryDTO(
         PartsTypeEnum partsType,
         String partsBrand,
         Integer partsPrice,
+        List<String> images,
         List<String> allCurrencies
 ) {
 }

@@ -58,10 +58,8 @@ public class OfferServiceImpl implements OfferService {
                 offerEntity.getMileage(),
                 offerEntity.getYear(),
                 offerEntity.getCubicCentimeters(),
-                //offerEntity.getDescription(),
-                //offerEntity.getEngine(),
-                //offerEntity.getTransmission(),
                 offerEntity.getPrice(),
+                offerEntity.getImages(),
                 exRateService.allSupportedCurrencies()
         );
     }

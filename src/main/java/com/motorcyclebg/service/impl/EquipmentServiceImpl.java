@@ -58,6 +58,7 @@ public class EquipmentServiceImpl implements EquipmentService {
                 equipmentEntity.getEquipmentType(),
                 equipmentEntity.getEquipmentBrand(),
                 equipmentEntity.getEquipmentPrice(),
+                equipmentEntity.getImages(),
                 exRateService.allSupportedCurrencies()
         );
     }

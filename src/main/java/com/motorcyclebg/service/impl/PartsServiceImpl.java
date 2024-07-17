@@ -58,6 +58,7 @@ public class PartsServiceImpl implements PartsService {
                 partsEntity.getPartsType(),
                 partsEntity.getPartsBrand(),
                 partsEntity.getPartsPrice(),
+                partsEntity.getImages(),
                 exRateService.allSupportedCurrencies()
         );
     }

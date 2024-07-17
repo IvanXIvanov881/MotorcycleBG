@@ -9,6 +9,7 @@ public record EquipmentSummaryDTO(
         EquipmentTypeEnum equipmentType,
         String equipmentBrand,
         Integer equipmentPrice,
+        List<String> images,
         List<String> allCurrencies
 ) {
 }

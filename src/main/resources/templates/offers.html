@@ -16,16 +16,16 @@
 <div th:replace="~{fragments/navbar::navbar(activeLink=${'all-offers'})}"></div>
 
 <div class="container-fluid">
-    <h2 class="text-center text-black mt-5">All Motorcycles</h2>
-    <div
-            th:each="offer : ${allOffers}"
-            th:object="${offer}"
-            class="offers row mx-auto d-flex flex-row justify-content-center">
+    <h2 class="text-center text-black mt-5"
+        th:text="#{details_all_motorcycle}">All Motorcycles</h2>
+    <div th:each="offer : ${allOffers}"
+         th:object="${offer}"
+         class="offers row mx-auto d-flex flex-row justify-content-center">
 
-        <div class="offer card col-sm-6 col-md-3  col-lg-2 m-1 p-0">
+        <div class="offer card col-sm-6 col-md-3  col-lg-2 m-1 p-0" data-offer-id="${offer.id}">
 
             <div class="card-img-top-wrapper">
-                <img class="card-img-top" alt="Motorcycle image"  th:src="*{images.get(0)}" />
+                <img class="card-img-top" alt="Motorcycle image" th:src="*{images.get(0)}"/>
             </div>
 
             <div class="card-body pb-1">
@@ -35,20 +35,15 @@
             </div>
 
             <ul class="offer-details list-group list-group-flush">
+
                 <li class="list-group-item">
-                    <!--                    <div class="card-text">• Brand: <span th:text="*{brandType()}"></span></div>-->
-                    <!--                        <div class="card-text">• Category: <span th:text="*{categoryType}"></span></div>-->
-                    <!--                        <div class="card-text">• Condition: <span th:text="*{conditionType}">Condition</span></div>-->
-                    <div class="card-text"><strong>• Cubic centimeters: </strong><span th:text="*{cubicCentimeters}">Cubic centimeters</span> ccm</div>
+                    <div class="card-text"><strong>• Cubic centimeters: </strong><span th:text="*{cubicCentimeters}">Cubic centimeters</span>
+                        ccm
+                    </div>
                     <div class="card-text"><strong>• Year: </strong><span th:text="*{year()}">Year</span></div>
                     <div class="card-text"><strong>• Mileage: </strong><span th:text="*{mileage()}">Mileage</span></div>
-                    <!--                        <div class="card-text">• Engine type <span th:text="*{engineType()}"></span></div>-->
-
-                    <!--                        <div class="card-text">• Transmission type <span th:text="*{transmissionType()}"></span></div>-->
-                    <!--                        <div class="card-text">• Color: <span th:text="*{color}">Color</span></div>-->
-                    <!--                        <div class="card-text">• Description: <span th:text="*{description}">Description</span></div>-->
-                    <div class="card-text"><strong>• Price: </strong><span id="price" th:text="*{price}">Price</span>
-                        <select id="currency">
+                    <div class="card-text"><strong>• Price: </strong><span class="price" th:text="*{price}">Price</span>
+                        <select class="currency">
                             <option
                                     th:each="currency : *{allCurrencies}"
                                     th:value="${currency}"
@@ -61,7 +56,7 @@
                     </div>
                 </li>
             </ul>
-            <input type="hidden" id="priceInBGN" th:value="*{price}">
+            <input type="hidden" class="priceInBGN" th:value="*{price}">
 
             <div class="card-body">
                 <a th:href="@{/offer/details/{id}/details(id=3,action='show_all')}"/>
@@ -69,6 +64,7 @@
                 <a class="card-link" th:href="@{/offers/details/{id}(id=*{id})}">Details</a>
             </div>
         </div>
+
     </div>
 </div>
 

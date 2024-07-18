@@ -16,6 +16,12 @@ public class OfferEntity extends BaseEntity {
     private CategoryTypeEnum category;
     @Enumerated(EnumType.STRING)
     private BrandTypeEnum brand;
+    @NotEmpty
+    @Size(max = 21)
+    private String model;
+    @PositiveOrZero
+    private Integer hp;
+
     @Enumerated(EnumType.STRING)
     private ConditionTypeEnum conditionType;
     @Enumerated(EnumType.STRING)
@@ -33,7 +39,7 @@ public class OfferEntity extends BaseEntity {
     @NotEmpty
     @Size(max = 1005)
     private String description;
-    @Size(max = 100)
+    @Size(max = 31)
     private String color;
     @ElementCollection(fetch = FetchType.EAGER)
     @Column(name = "images")
@@ -149,6 +155,24 @@ public class OfferEntity extends BaseEntity {
 
     public OfferEntity setImages(List<String> images) {
         this.images = images;
+        return this;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public OfferEntity setModel(String model) {
+        this.model = model;
+        return this;
+    }
+
+    public Integer getHp() {
+        return hp;
+    }
+
+    public OfferEntity setHp(Integer hp) {
+        this.hp = hp;
         return this;
     }
 }

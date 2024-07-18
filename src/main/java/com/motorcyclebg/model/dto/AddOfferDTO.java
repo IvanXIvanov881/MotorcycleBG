@@ -11,6 +11,11 @@ public class AddOfferDTO {
     private CategoryTypeEnum categoryType;
     @NotNull(message = "{add.offer.brand.type.not.empty}")
     private BrandTypeEnum brandType;
+    @NotNull(message = "{add.offer.model.not.empty}")
+    @Size(message = "{add.offer.model.size}", min = 1, max = 20)
+    private String model;
+    @PositiveOrZero
+    private Integer hp;
     @NotNull(message = "{add.offer.condition.type.not.empty}")
     private ConditionTypeEnum conditionType;
     @NotNull(message = "{add.offer.engine.type.not.empty}")
@@ -32,7 +37,7 @@ public class AddOfferDTO {
     @NotEmpty(message = "{add.offer.description.not.empty}")
     @Size(message = "{add.offer.description.size}", min = 1, max = 1000)
     private String description;
-    @Size(message = "{add.offer.color.size}", max = 100)
+    @Size(message = "{add.offer.color.size}", max = 30)
     private String color;
 
     private List<@URL @NotBlank String> images;
@@ -146,6 +151,24 @@ public class AddOfferDTO {
 
     public AddOfferDTO setImages(List<String> images) {
         this.images = images;
+        return this;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public AddOfferDTO setModel(String model) {
+        this.model = model;
+        return this;
+    }
+
+    public Integer getHp() {
+        return hp;
+    }
+
+    public AddOfferDTO setHp(Integer hp) {
+        this.hp = hp;
         return this;
     }
 }

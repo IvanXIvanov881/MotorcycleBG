@@ -6,6 +6,8 @@ import java.util.List;
 
 public record OfferDetailsDTO(Long id,
                               BrandTypeEnum brandType,
+                              String model,
+                              Integer hp,
                               CategoryTypeEnum categoryType,
                               Integer cubicCentimeters,
                               Integer mileage,

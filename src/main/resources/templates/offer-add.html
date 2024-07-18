@@ -67,21 +67,72 @@
         </div>
 
         <div class="row">
+            <div class="form-group col-md-6 mb-3">
+                <label th:for="model" class="text-white font-weight-bold">Model</label>
+                <input th:field="*{model}"
+                       th:errorclass="is-invalid"
+                       type="text"
+                       class="form-control"
+                       placeholder="model"/>
+                <!--                <p class="invalid-feedback errors alert alert-danger">-->
+                <!--                    Color is required.-->
+                <!--                </p>-->
+                <small
+                        th:errors="*{model}" class="text-danger">Model error
+                </small>
+            </div>
 
             <div class="form-group col-md-6 mb-3">
-                <label class="text-white font-weight-bold" th:for="cubicCentimeters" >Cubic Centimeters</label>
+                <label th:for="hp" class="text-white font-weight-bold">HP</label>
+                <input th:field="*{hp}"
+                       th:errorclass="is-invalid"
+                       type="number"
+                       class="form-control"
+                       placeholder="HP in number"/>
+                <!--                <p class="invalid-feedback errors alert alert-danger">-->
+                <!--                    Wrong Mileage information. Have to be 0 or positive number.-->
+                <!--                </p>-->
+                <small
+                        th:errors="*{hp}" class="text-danger">HP error
+                </small>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="form-group col-md-6 mb-3">
+                <label th:for="mileage" class="text-white font-weight-bold">Mileage</label>
+                <input th:field="*{mileage}"
+                       th:errorclass="is-invalid"
+                       type="number"
+                       class="form-control"
+                       placeholder="Mileage in kilometers"/>
+                <!--                <p class="invalid-feedback errors alert alert-danger">-->
+                <!--                    Wrong Mileage information. Have to be 0 or positive number.-->
+                <!--                </p>-->
+                <small
+                        th:errors="*{mileage}" class="text-danger">Mileage error
+                </small>
+            </div>
+
+
+            <div class="form-group col-md-6 mb-3">
+                <label class="text-white font-weight-bold" th:for="cubicCentimeters">Cubic Centimeters</label>
                 <input th:field="*{cubicCentimeters}"
                        th:errorclass="is-invalid"
                        type="number"
                        class="form-control"
                        placeholder="Cubic centimeters."/>
                 <!--                <p class="invalid-feedback errors alert alert-danger">-->
-                <!--                    Wrong Cubic centimeters information. Have to be 0 or positive number.-->
+                <!--                    Wrong Cubic Centimeters information. Have to be 0 or positive number.-->
                 <!--                </p>-->
                 <small
                         th:errors="*{cubicCentimeters}" class="text-danger">Cubic Centimeters error
                 </small>
             </div>
+        </div>
+
+        <div class="row">
 
             <div class="form-group col-md-6 mb-3">
 
@@ -103,24 +154,6 @@
                 <!--                </p>-->
                 <small
                         th:errors="*{categoryType}" class="text-danger">Category type error
-                </small>
-            </div>
-        </div>
-
-        <div class="row">
-
-            <div class="form-group col-md-6 mb-3">
-                <label th:for="mileage" class="text-white font-weight-bold">Mileage</label>
-                <input th:field="*{mileage}"
-                       th:errorclass="is-invalid"
-                       type="number"
-                       class="form-control"
-                       placeholder="Mileage in kilometers"/>
-                <!--                <p class="invalid-feedback errors alert alert-danger">-->
-                <!--                    Wrong Mileage information. Have to be 0 or positive number.-->
-                <!--                </p>-->
-                <small
-                        th:errors="*{mileage}" class="text-danger">Mileage error
                 </small>
             </div>
 

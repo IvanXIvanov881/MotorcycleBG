@@ -55,6 +55,7 @@ public class OfferServiceImpl implements OfferService {
         //TODO use mapping library
         return new OfferSummaryDTO(offerEntity.getId(),
                 offerEntity.getBrand(),
+                offerEntity.getModel(),
                 offerEntity.getMileage(),
                 offerEntity.getYear(),
                 offerEntity.getCubicCentimeters(),
@@ -69,6 +70,8 @@ public class OfferServiceImpl implements OfferService {
         return new OfferDetailsDTO(
                 offerEntity.getId(),
                 offerEntity.getBrand(),
+                offerEntity.getModel(),
+                offerEntity.getHp(),
                 offerEntity.getCategory(),
                 offerEntity.getCubicCentimeters(),
                 offerEntity.getMileage(),
@@ -84,12 +87,13 @@ public class OfferServiceImpl implements OfferService {
         );
     }
 
-
     private static OfferEntity map(AddOfferDTO addOfferDTO) {
 
         //TODO: we have to use ModelMapper
         return new OfferEntity()
                 .setBrand(addOfferDTO.getBrandType())
+                .setModel(addOfferDTO.getModel())
+                .setHp(addOfferDTO.getHp())
                 .setCategory(addOfferDTO.getCategoryType())
                 .setDescription(addOfferDTO.getDescription())
                 .setEngine(addOfferDTO.getEngineType())
@@ -102,5 +106,4 @@ public class OfferServiceImpl implements OfferService {
                 .setColor(addOfferDTO.getColor())
                 .setImages(addOfferDTO.getImages());
     }
-
 }

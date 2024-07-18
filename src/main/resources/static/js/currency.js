@@ -1,25 +1,22 @@
-document.addEventListener('DOMContentLoaded', function() {
-  let currencyDropdowns = document.querySelectorAll('.currency');
+let currencyDropDown = document.getElementById('currency')
 
-  currencyDropdowns.forEach(dropdown => {
-    dropdown.addEventListener('change', function() {
-      let selectedCurrency = this.value;
-      let offerElement = this.closest('.offer');
-      let amountInBGN = offerElement.querySelector('.priceInBGN').value;
-      let priceSpan = offerElement.querySelector('.price');
+currencyDropDown.addEventListener('change', currencyChange)
 
-      fetch('/api/convert?' + new URLSearchParams({
+function currencyChange() {
+  let selectedCurrency = currencyDropDown.value
+  let amountInBGN = document.getElementById('priceInBGN').value
+  let priceSpan = document.getElementById('price')
+
+  fetch('/api/convert?' + new URLSearchParams(
+      {
         from: 'BGN',
         to: selectedCurrency,
         amount: amountInBGN
-      }))
-      .then(response => response.json())
-      .then(data => {
-        priceSpan.textContent = data.result;
-      })
-      .catch(error => {
-        console.log('An error occurred: ' + error);
-      });
-    });
-  });
-});
+      }
+  ))
+  .then(response => response.json())
+  .then(data => {priceSpan.textContent = data.result})
+  .catch(error => {
+    console.log('An error occurred:' + error)
+  })
+}

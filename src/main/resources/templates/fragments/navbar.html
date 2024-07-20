@@ -13,19 +13,49 @@
 
 <div th:fragment="navbar(activeLink)">
 
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top align-items-end">
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto col-12 justify-content-between">
 
+                <li>
+                    <a class="navbar-brand" href="/"><img alt="motorcycle picture"
+                                                          src="/images/vecteezy_vintage-bike-logo-cartoon-with_24207632.png"
+                                                          class="logo">
+
+                    </a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <form th:method="get">
+                        <label class="text-white" for="lang" th:text="#{nav_bar_language}">Language</label>
+                        <select
+                                id="lang"
+                                name="lang"
+                                onchange="this.form.submit()">
+                            <option value="eu_US" th:selected="${#locale.toString()} == 'en_US'">EN</option>
+                            <option value="bg_BG" th:selected="${#locale.toString()} == 'bg_BG'">БГ</option>
+
+                        </select>
+                    </form>
+                </li>
+
                 <li class="nav-item">
                     <a class="nav-link" href="/brands/all" th:classappend="${activeLink == 'brands'}? 'active'"
-                    th:text="#{nav_bar_all_brands}">All Brands</a>
+                       th:text="#{nav_bar_all_brands}">All Brands</a>
                 </li>
 
                 <li class="nav-item">
                     <a class="nav-link" href="/offers/add" th:classappend="${activeLink == 'add-offer'}? 'active'"
-                    th:text="#{nav_bar_add_offers}">Add Motorcycle</a>
+                       th:text="#{nav_bar_add_offers}">Add Motorcycle</a>
                 </li>
 
                 <li class="nav-item">
@@ -39,15 +69,7 @@
                        th:text="#{nav_bar_add_parts}">Add Parts</a>
                 </li>
 
-                <a class="navbar-brand" href="/"><img alt="motorcycle picture"
-                                                      src="/images/vecteezy_vintage-bike-logo-cartoon-with_24207632.png"
-                                                      class="logo">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse"
-                            data-target="#navbarSupportedContent"
-                            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                </a>
+
 
                 <li class="nav-item">
                     <a class="nav-link" href="/offers/all" th:classappend="${activeLink == 'all-offers'}? 'active'"
@@ -71,10 +93,7 @@
                        th:text="#{nav_bar_admin}">Admin
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/">Action</a>
-                        <a class="dropdown-item" href="/">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="/">Something else here</a>
+                        <a class="dropdown-item" href="/admin/users" sec:authorize="hasRole('ADMIN')">Users</a>
                     </div>
                 </li>
 
@@ -97,22 +116,8 @@
                 <li class="nav-item" sec:authorize="!isAuthenticated()">
                     <a class="nav-link" href="/users/login"
                        th:classappend="${activeLink == 'login'}? 'active'"
-                    th:text="#{nav_bar_login}">Login
+                       th:text="#{nav_bar_login}">Login
                     </a>
-                </li>
-
-                <li class="nav-item dropdown">
-                    <form th:method="get">
-                        <label class="text-white" for="lang" th:text="#{nav_bar_language}">Language</label>
-                        <select
-                                id="lang"
-                                name="lang"
-                        onchange="this.form.submit()">
-                            <option value="eu_US" th:selected="${#locale.toString()} == 'en_US'">EN</option>
-                            <option value="bg_BG" th:selected="${#locale.toString()} == 'bg_BG'">БГ</option>
-
-                        </select>
-                    </form>
                 </li>
 
             </ul>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta charset="UTF-8">
+  <title>MotorcycleBG</title>
+  <link rel="stylesheet" href="/css/reset-css.css"/>
+  <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+  <link rel="stylesheet" type="text/css" href="/css/main.css"/>
+  <script src="/js/jquery-3.5.1.slim.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+<div th:replace="~{fragments/navbar::navbar(activeLink=${'admin'})}"></div>
+
+<div class="container-fluid">
+  <h2 class="text-center text-black mt-5"> All users </h2>
+  <div th:each="user : ${allUsers}"
+       th:object="${user}"
+       class="offers row mx-auto d-flex flex-row justify-content-center">
+
+    <div class="offer card col-sm-6 col-md-3  col-lg-2 m-1 p-0" data-user-id="${user.id}">
+
+
+      <div class="card-body pb-1">
+        <h5 class="card-title">
+          <div class="card-text"><strong><span th:text="*{email()}">Email</span></strong></div>
+        </h5>
+      </div>
+
+      <ul class="offer-details list-group list-group-flush">
+
+        <li class="list-group-item">
+          <div class="card-text"><strong>• First name: </strong><span th:text="*{firstName}">First name</span>
+          </div>
+
+        </li>
+      </ul>
+
+
+      <div class="card-body">
+        <a th:href="@{/admin/users/{id}/details(id=3,action='show_all')}"/>
+
+        <a class="card-link" th:href="@{/admin/users/{id}(id=*{id})}">Details</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<div th:replace="~{fragments/footer::footer}"></div>
+
+</body>
+</html>

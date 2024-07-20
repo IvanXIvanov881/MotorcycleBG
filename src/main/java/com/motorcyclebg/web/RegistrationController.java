@@ -2,7 +2,6 @@ package com.motorcyclebg.web;
 
 import com.motorcyclebg.model.dto.UserRegistrationDTO;
 import com.motorcyclebg.service.UserService;
-import com.motorcyclebg.service.exception.ObjectNotFoundException;
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;

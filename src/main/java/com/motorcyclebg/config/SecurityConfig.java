@@ -27,6 +27,7 @@ public class SecurityConfig {
                                         .requestMatchers("/", "/users/login", "/users/register", "/error",
                                                 "/offers/all", "/equipments/all", "/parts/all", "/offers/details/{id}", "/equipments/details/{id}", "/parts/details/{id}",
                                                 "/api/convert", "/cookies").permitAll()
+                                        .requestMatchers("/admin/users", "/admin").hasRole("ADMIN")
                                         // all other URL-s should be authenticated.
                                         .anyRequest()
                                         .authenticated()

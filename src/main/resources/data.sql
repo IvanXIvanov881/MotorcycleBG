@@ -1,12 +1,11 @@
 
-
 insert into offers (id, brand, category, color, condition_type, cubic_centimeters, description, engine, hp, mileage, model, price, transmission, year) values
  (1, 'HONDA', 'SuperSportsBike', 'Yellow/Black', 'USED', 599, 'The Honda CBR600RR is a 599 cc (36.6 cu in) sport bike made by Honda since 2003,
  part of the CBR series. The CBR600RR was marketed as Hondas top-of-the-line middleweight sport bike, succeeding the
  2002 Supersport World Champion 2001–2006 CBR600F4i, which was then repositioned as the tamer,
  more street-oriented sport bike behind the technically more advanced and uncompromising race-replica CBR600RR.
  It carried the Supersport World Championship winning streak into 2003, and on through 2008, and won in 2010 and 2014.'
- , 'PETROL', 120, 45500, 'CB500', 7000, 'MANUAL', 2003);
+ , 'PETROL', 120, 45500, 'CBR600RR', 7000, 'MANUAL', 2003);
 
 insert into offer_entity_images (offer_entity_id, images) values
  (1, 'https://upload.wikimedia.org/wikipedia/commons/6/64/2006HondaCBR600RR-001.jpg');

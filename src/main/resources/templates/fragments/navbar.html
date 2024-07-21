@@ -24,17 +24,15 @@
 
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <a class="navbar-brand" href="/"><img alt="motorcycle picture"
+                                                  src="/images/vecteezy_vintage-bike-logo-cartoon-with_24207632.png"
+                                                  class="logo">
+            </a>
+
             <ul class="navbar-nav mr-auto col-12 justify-content-between">
 
-                <li>
-                    <a class="navbar-brand" href="/"><img alt="motorcycle picture"
-                                                          src="/images/vecteezy_vintage-bike-logo-cartoon-with_24207632.png"
-                                                          class="logo">
-
-                    </a>
-                </li>
-
-                <li class="nav-item dropdown">
+                <li class="nav-item">
                     <form th:method="get">
                         <label class="text-white" for="lang" th:text="#{nav_bar_language}">Language</label>
                         <select
@@ -46,11 +44,6 @@
 
                         </select>
                     </form>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="/brands/all" th:classappend="${activeLink == 'brands'}? 'active'"
-                       th:text="#{nav_bar_all_brands}">All Brands</a>
                 </li>
 
                 <li class="nav-item">

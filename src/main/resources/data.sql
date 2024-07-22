@@ -1,4 +1,3 @@
-
 insert into offers (id, brand, category, city, color, condition_type, cubic_centimeters, description, engine, hp, mileage, model, phone, price, transmission, year) values
  (1, 'HONDA', 'SuperSportsBike', 'Dobrich', 'Yellow/Black', 'USED', 599, 'The Honda CBR600RR is a 599 cc (36.6 cu in) sport bike made by Honda since 2003,
  part of the CBR series. The CBR600RR was marketed as Hondas top-of-the-line middleweight sport bike, succeeding the
@@ -135,7 +134,6 @@ insert into offer_entity_images (offer_entity_id, images) values
  (10, 'https://upload.wikimedia.org/wikipedia/commons/7/7e/2006Ninja650RSideView.jpg');
 
 
-
 insert into offers (id, brand, category, city,  color, condition_type, cubic_centimeters, description, engine, hp, mileage, model, phone, price, transmission, year) values
  (11, 'YAMAHA', 'Enduro', 'Burgas', 'Blue/Black', 'NEW', 750, 'The Yamaha YZF-R6 is a sport bike,[1] produced by Yamaha as a 600 class from 1999 to 2020. From 2021, production availability is limited to race-only specification in most global markets,[2][3] causing race organisers to realign their engine eligibility criteria to encourage other manufacturers having larger than 600 cc displacements to enter road-race competition from 2022.[4] Race organisers wanted to provide scope for alternative machinery
  to move away from established tradition of the Yamaha R6 being the
@@ -158,7 +156,6 @@ insert into offer_entity_images (offer_entity_id, images) values
  (12, 'https://upload.wikimedia.org/wikipedia/commons/5/51/2015_Yamaha_YZF-R1_crop.JPG');
 insert into offer_entity_images (offer_entity_id, images) values
 (12, 'https://upload.wikimedia.org/wikipedia/commons/a/a0/1998_Yamaha_YZF-R1_in_the_Yamaha_Communication_Plaza.JPG');
-
 
 
 insert into offers (id, brand, category, city,  color, condition_type, cubic_centimeters, description, engine, hp, mileage, model, phone, price, transmission, year) values
@@ -189,7 +186,6 @@ insert into offer_entity_images (offer_entity_id, images) values
 (14, 'https://upload.wikimedia.org/wikipedia/commons/c/c0/Hot_Shot_Bobber.jpg');
 
 
-
 insert into offers (id, brand, category, city,  color, condition_type, cubic_centimeters, description, engine, hp, mileage, model, phone, price, transmission, year) values
  (15, 'SUZUKI', 'Chopper', 'Montana', 'Yellow', 'USED', 1250, 'The Suzuki Intruder is a series of cruiser motorcycles made by Suzuki from 1985 to 2005. After 2005, the Intruder lineup was replaced by the Boulevard range.
  In Europe, the Intruder name remains in use on certain models. The VS Intruder bikes all have 4-stroke V-twin engines.', 'PETROL', 55, 160000, 'Intruder', 0894123321, 15500, 'MANUAL', 1998);
@@ -202,7 +198,6 @@ insert into offer_entity_images (offer_entity_id, images) values
  (15, 'https://upload.wikimedia.org/wikipedia/commons/5/52/2003_VS800GL.jpg');
 
 
-
 insert into equipment (id, city, equipment_brand, equipment_condition_type, equipment_description, equipment_price, equipment_type, phone) values
 (1, 'Dobrich', 'Dainese', 'NEW', 'Dainese (pronounced dye-ee-neh-zeh; Italian: [daiˈneze]) is an Italian manufacturer of protective equipment and technical gear for dynamic sports, including motorcycling, mountain biking, winter sports and horseriding.
 Founded in 1972 by Lino Dainese, it has expanded through organic growth and acquisitions, including Italian helmet manufacturer AGV in 2007.[1]', 450, 'MCJacketsShirtsHoodies', 0894411377);
@@ -212,6 +207,9 @@ insert into equipment_entity_images (equipment_entity_id, images) values
 
 insert into equipment_entity_images (equipment_entity_id, images) values
 (1, 'https://upload.wikimedia.org/wikipedia/commons/4/48/Dainese_isologo.png');
+
+insert into equipment_entity_images (equipment_entity_id, images) values
+(1, 'https://upload.wikimedia.org/wikipedia/commons/5/5a/Valentino_Rossi_suiting_up.jpg');
 
 
 insert into equipment (id, city, equipment_brand, equipment_condition_type, equipment_description, equipment_price, equipment_type, phone) values
@@ -230,6 +228,9 @@ insert into equipment (id, city, equipment_brand, equipment_condition_type, equi
 which was taken over by Investcorp in 2019.[2] The AGV brand is well known in motorcycle sport.', 1200, 'Helmets', 0894411377);
 
 insert into equipment_entity_images (equipment_entity_id, images) values
+(3, 'https://upload.wikimedia.org/wikipedia/commons/d/d3/Nolan102.jpg');
+
+insert into equipment_entity_images (equipment_entity_id, images) values
 (3, 'https://upload.wikimedia.org/wikipedia/commons/5/57/Agv_motorsports_logo.svg');
 
 
@@ -238,10 +239,10 @@ insert into equipment (id, city, equipment_brand, equipment_condition_type, equi
 Founded in 1972 by Lino Dainese, it has expanded through organic growth and acquisitions, including Italian helmet manufacturer AGV in 2007.[1]', 450, 'MCJacketsShirtsHoodies', 0894411377);
 
 insert into equipment_entity_images (equipment_entity_id, images) values
-(4, 'https://upload.wikimedia.org/wikipedia/commons/4/48/Dainese_isologo.png');
+(4, 'https://upload.wikimedia.org/wikipedia/commons/6/6b/Valentino_Rossi_running_out_of_front_tire_%2814023449353%29.jpg');
 
 insert into equipment_entity_images (equipment_entity_id, images) values
-(4, 'https://upload.wikimedia.org/wikipedia/commons/0/0f/Dainese_Motorrad_Lederkombi_-_Frauen_Gr%C3%B6%C3%9Fe_36_-_Bild_001.jpg');
+(4, 'https://upload.wikimedia.org/wikipedia/commons/4/48/Dainese_isologo.png');
 
 
 insert into equipment (id, city, equipment_brand, equipment_condition_type, equipment_description, equipment_price, equipment_type, phone) values
@@ -263,7 +264,6 @@ insert into equipment_entity_images (equipment_entity_id, images) values
 (6, 'https://upload.wikimedia.org/wikipedia/commons/e/e0/Valentino_Rossi%27s_AGV_helmets.jpg');
 
 
-
 insert into parts (id, city, parts_brand, parts_condition_type, parts_description, parts_price, parts_type, phone) values
 (1, 'Dobrich', 'Engine for Suzuki', 'USED', 'A motorcycle engine is an engine that powers a motorcycle.
 Motorcycle engines are typically two-stroke or four-stroke internal combustion engines,
@@ -273,7 +273,7 @@ insert into parts_entity_images (parts_entity_id, images) values
 (1, 'https://upload.wikimedia.org/wikipedia/commons/1/16/Honda_Super_Cub_at_Seattle_Children%27s_Museum1.jpg');
 
 insert into parts (id, city, parts_brand, parts_condition_type, parts_description, parts_price, parts_type, phone) values
-(2, 'Varna', 'for Suzuki', 'USED', 'A motorcycle engine is an engine that powers a motorcycle.
+(2, 'Varna', 'Four-stroke ', 'USED', 'A motorcycle engine is an engine that powers a motorcycle.
 Motorcycle engines are typically two-stroke or four-stroke internal combustion engines,
  but other engine types, such as Wankels and electric motors, have been used.', 500, 'EnginePartsFilters', 0894411377);
 
@@ -281,9 +281,16 @@ insert into parts_entity_images (parts_entity_id, images) values
 (2, 'https://upload.wikimedia.org/wikipedia/commons/8/8a/El_Camino_Motorcycle_Show_0097_cropped.jpg');
 
 insert into parts (id, city, parts_brand, parts_condition_type, parts_description, parts_price, parts_type, phone) values
-(3, 'Varna', 'for Suzuki', 'USED', 'A motorcycle engine is an engine that powers a motorcycle.
+(3, 'Varna', 'PC37 Honda', 'USED', 'A motorcycle engine is an engine that powers a motorcycle.
 Motorcycle engines are typically two-stroke or four-stroke internal combustion engines,
  but other engine types, such as Wankels and electric motors, have been used.', 500, 'EnginePartsFilters', 0894411377);
 
 insert into parts_entity_images (parts_entity_id, images) values
 (3, 'https://upload.wikimedia.org/wikipedia/commons/1/1d/1962_Honda_CB77_Superhawk_305_cc_twin_engine.jpg');
+
+insert into parts (id, city, parts_brand, parts_condition_type, parts_description, parts_price, parts_type, phone) values
+(4, 'Burgas', 'Pirelli', 'USED', 'Sport Street tyres are for aggressive street riders that spend most of their time carving corners on public roadways. These tyres do not have a long life, but in turn have better traction in high speed cornering.
+ Street and sport street tyres have good traction even when cold, but when warmed too much, can actually lose traction as their internal temperature increases.', 650, 'EnginePartsFilters', 0894411377);
+
+insert into parts_entity_images (parts_entity_id, images) values
+(4, 'https://upload.wikimedia.org/wikipedia/commons/7/73/Tires_for_motorcycle_racing.jpg');

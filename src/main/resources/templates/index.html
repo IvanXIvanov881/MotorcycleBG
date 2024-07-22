@@ -16,10 +16,61 @@
 <div th:replace="~{fragments/navbar::navbar(activeLink=${'home'})}"></div>
 
 <div class="container-fluid">
-    <h5 class="text-center text-black mt-5"><strong> Welcome to MOTORCYCLE BG, </strong>
+
+
+    <h1 class="welcome-text text-black mt-5"><strong> Welcome to MOTORCYCLE BG, </strong>
         <th:block th:text="${welcomeMessage}"></th:block>
         !
-    </h5>
+    </h1>
+
+    <div class="row mx-auto d-flex flex-wrap justify-content-center">
+
+    <h4 class="text-center mt-5 mb-2">
+        for more information check <strong><a th:href="@{/offers/all}">All Motorcycles, </a>
+        <a th:href="@{/equipments/all}">All Equipments </a>or
+        <a th:href="@{/parts/all}"> All Parts</a></strong>.
+    </h4>
+
+    </div>
+
+
+        <div class="row mx-auto d-flex flex-wrap justify-content-center">
+
+            <div th:each="summaries : ${allSummaries}"
+                 th:object="${summaries}"
+                 class="offer card col-sm-6 col-md-4 col-lg-2 m-3 p-0" data-summaries-id="${summaries.id}">
+
+                <div class="card-img-top-wrapper">
+                    <img class="card-img-top" alt="Motorcycle image" th:src="*{images.get(0)}"/>
+                </div>
+
+                <div class="card-body pb-1">
+                    <h5 class="card-title">
+<!--                        <div class="card-text"><strong><span-->
+<!--                                th:text="*{equipmentBrand()}"> Equipment brand </span></strong>-->
+<!--                        </div>-->
+                    </h5>
+                </div>
+
+                <ul class="offer-details list-group list-group-flush">
+                    <li class="list-group-item">
+                        <div class="card-text"><strong>• City: </strong><span th:text="*{city()}">City</span></div>
+                        <div class="card-text"><strong>• Phone: </strong><span th:text="*{phone}">Phone</span></div>
+                    </li>
+                </ul>
+
+
+<!--                <div class="card-body">-->
+<!--                    <a th:href="@{/equipments/equipment-details/{id}/details(id=3,action='show_all')}"/>-->
+<!--                    <a class="card-link" th:href="@{/equipments/details/{id}(id=*{id})}">Details</a>-->
+<!--                </div>-->
+            </div>
+
+        </div>
+
+
+
+
 </div>
 
 <div th:replace="~{fragments/footer::footer}"></div>

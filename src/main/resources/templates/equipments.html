@@ -20,7 +20,7 @@
     <div class="row mx-auto d-flex flex-wrap justify-content-center">
         <div th:each="equipment : ${allEquipments}"
              th:object="${equipment}"
-             class="offer card col-sm-6 col-md-4 col-lg-2 m-1 p-0" data-equipment-id="${equipment.id}">
+             class="offer card col-sm-6 col-md-4 col-lg-2 m-3 p-0" data-equipment-id="${equipment.id}">
 
             <div class="card-img-top-wrapper">
                 <img class="card-img-top" alt="Motorcycle image" th:src="*{images.get(0)}"/>

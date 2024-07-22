@@ -38,6 +38,12 @@ offers:
   api:
     baseUrl: "http://localhost:8081"
 
+admin:
+  email: ${admin_email}
+  password: ${admin_password}
+  firstName: ${admin_firstName}
+  lastName: ${admin_lastName}
+
 #server:
 #  error:
 #    whitelabel:

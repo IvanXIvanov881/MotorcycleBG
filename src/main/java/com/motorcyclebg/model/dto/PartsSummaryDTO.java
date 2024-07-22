@@ -7,6 +7,7 @@ public record PartsSummaryDTO(
         Long id,
         PartsTypeEnum partsType,
         String partsBrand,
+        String city,
         Integer partsPrice,
         List<String> images,
         List<String> allCurrencies

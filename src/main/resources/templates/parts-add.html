@@ -64,8 +64,42 @@
                 </small>
             </div>
 
+        </div>
+
+        <div class="row">
+
+            <div class="form-group col-md-6 mb-3">
+                <label th:for="city" class="text-white font-weight-bold">City</label>
+                <input th:field="*{city}"
+                       th:errorclass="is-invalid"
+                       type="text"
+                       class="form-control"
+                       placeholder="City"/>
+                <!--                <p class="invalid-feedback errors alert alert-danger">-->
+                <!--                    City is required.-->
+                <!--                </p>-->
+                <small
+                        th:errors="*{city}" class="text-danger">City error
+                </small>
+            </div>
+
+            <div class="form-group col-md-6 mb-3">
+                <label th:for="phone" class="text-white font-weight-bold">Phone</label>
+                <input th:field="*{phone}"
+                       th:errorclass="is-invalid"
+                       type="text"
+                       class="form-control"
+                       placeholder="Phone"/>
+                <!--                <p class="invalid-feedback errors alert alert-danger">-->
+                <!--                    Phone is required.-->
+                <!--                </p>-->
+                <small
+                        th:errors="*{phone}" class="text-danger">Phone error
+                </small>
+            </div>
 
         </div>
+
 
         <div class="row">
 

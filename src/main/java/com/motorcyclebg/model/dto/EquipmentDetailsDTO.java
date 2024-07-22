@@ -11,6 +11,8 @@ public record EquipmentDetailsDTO(
         String equipmentBrand,
         EquipmentConditionTypeEnum equipmentConditionType,
         String equipmentDescription,
+        Integer phone,
+        String city,
         Integer equipmentPrice,
         List<String> allCurrencies,
         List<String> images

@@ -57,6 +57,7 @@ public class PartsServiceImpl implements PartsService {
         return new PartsSummaryDTO(partsEntity.getId(),
                 partsEntity.getPartsType(),
                 partsEntity.getPartsBrand(),
+                partsEntity.getCity(),
                 partsEntity.getPartsPrice(),
                 partsEntity.getImages(),
                 exRateService.allSupportedCurrencies()
@@ -71,6 +72,8 @@ public class PartsServiceImpl implements PartsService {
                 partsEntity.getPartsBrand(),
                 partsEntity.getPartsConditionType(),
                 partsEntity.getPartsDescription(),
+                partsEntity.getPhone(),
+                partsEntity.getCity(),
                 partsEntity.getPartsPrice(),
                 exRateService.allSupportedCurrencies(),
                 partsEntity.getImages()
@@ -85,6 +88,8 @@ public class PartsServiceImpl implements PartsService {
                 .setPartsBrand(addPartsDTO.getPartsBrand())
                 .setPartsConditionType(addPartsDTO.getPartsConditionType())
                 .setPartsDescription(addPartsDTO.getPartsDescription())
+                .setPhone(addPartsDTO.getPhone())
+                .setCity(addPartsDTO.getCity())
                 .setPartsPrice(addPartsDTO.getPartsPrice())
                 .setImages(addPartsDTO.getImages());
     }

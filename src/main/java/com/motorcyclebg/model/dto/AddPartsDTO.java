@@ -25,6 +25,13 @@ public class AddPartsDTO {
     @PositiveOrZero
     private Integer partsPrice;
 
+    @NotNull(message = "{add.offer.phone.not.empty}")
+    @PositiveOrZero
+    private Integer phone;
+
+    @Size(message = "{add.offer.city.size}", max = 20)
+    private String city;
+
     private List<@URL @NotBlank String> images;
 
     public AddPartsDTO() {
@@ -82,5 +89,23 @@ public class AddPartsDTO {
     public AddPartsDTO setImages(List<String> images) {
         this.images = images;
         return this;
+    }
+
+    public AddPartsDTO setPhone(Integer phone) {
+        this.phone = phone;
+        return this;
+    }
+
+    public AddPartsDTO setCity(String city) {
+        this.city = city;
+        return this;
+    }
+
+    public Integer getPhone() {
+        return phone;
+    }
+
+    public String getCity() {
+        return city;
     }
 }

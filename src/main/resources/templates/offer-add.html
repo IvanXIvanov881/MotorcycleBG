@@ -73,7 +73,7 @@
                        th:errorclass="is-invalid"
                        type="text"
                        class="form-control"
-                       placeholder="model"/>
+                       placeholder="Model"/>
                 <!--                <p class="invalid-feedback errors alert alert-danger">-->
                 <!--                    Color is required.-->
                 <!--                </p>-->
@@ -224,17 +224,17 @@
         <div class="row">
 
             <div class="form-group col-md-6 mb-3">
-                <label th:for="color" class="text-white font-weight-bold">Color</label>
-                <input th:field="*{color}"
+                <label th:for="phone" class="text-white font-weight-bold">Phone</label>
+                <input th:field="*{phone}"
                        th:errorclass="is-invalid"
                        type="text"
                        class="form-control"
-                       placeholder="color"/>
+                       placeholder="Phone"/>
                 <!--                <p class="invalid-feedback errors alert alert-danger">-->
-                <!--                    Color is required.-->
+                <!--                    Phone is required.-->
                 <!--                </p>-->
                 <small
-                        th:errors="*{color}" class="text-danger">Color error
+                        th:errors="*{phone}" class="text-danger">Phone error
                 </small>
             </div>
 
@@ -248,7 +248,7 @@
                         <option th:each="type: ${allConditionTypes}"
                                 th:value="${type}"
                                 th:text="${type}">
-                            Transmission type
+                            Condition type
                         </option>
                     </optgroup>
                 </select>
@@ -257,6 +257,39 @@
                 <!--                </p>-->
                 <small
                         th:errors="*{conditionType}" class="text-danger">Condition type error
+                </small>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="form-group col-md-6 mb-3">
+                <label th:for="city" class="text-white font-weight-bold">City</label>
+                <input th:field="*{city}"
+                       th:errorclass="is-invalid"
+                       type="text"
+                       class="form-control"
+                       placeholder="City"/>
+                <!--                <p class="invalid-feedback errors alert alert-danger">-->
+                <!--                    City is required.-->
+                <!--                </p>-->
+                <small
+                        th:errors="*{city}" class="text-danger">City error
+                </small>
+            </div>
+
+            <div class="form-group col-md-6 mb-3">
+                <label th:for="color" class="text-white font-weight-bold">Color</label>
+                <input th:field="*{color}"
+                       th:errorclass="is-invalid"
+                       type="text"
+                       class="form-control"
+                       placeholder="Color"/>
+                <!--                <p class="invalid-feedback errors alert alert-danger">-->
+                <!--                    Color is required.-->
+                <!--                </p>-->
+                <small
+                        th:errors="*{color}" class="text-danger">Color error
                 </small>
             </div>
 

@@ -39,9 +39,14 @@ public class AddOfferDTO {
     private String description;
     @Size(message = "{add.offer.color.size}", max = 30)
     private String color;
+    @NotNull(message = "{add.offer.phone.not.empty}")
+    @PositiveOrZero
+    private Integer phone;
+
+    @Size(message = "{add.offer.city.size}", max = 20)
+    private String city;
 
     private List<@URL @NotBlank String> images;
-
 
     public AddOfferDTO() {
     }
@@ -171,4 +176,23 @@ public class AddOfferDTO {
         this.hp = hp;
         return this;
     }
+
+    public Integer getPhone() {
+        return phone;
+    }
+
+    public AddOfferDTO setPhone(Integer phone) {
+        this.phone = phone;
+        return this;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public AddOfferDTO setCity(String city) {
+        this.city = city;
+        return this;
+    }
+
 }

@@ -42,7 +42,7 @@ public class UserServiceImpl implements UserService {
     private UserEntity map(UserRegistrationDTO userRegistrationDTO) {
 
         UserEntity mappedEntity = modelMapper.map(userRegistrationDTO, UserEntity.class);
-        UserRoleEntity role = roleRepository.findByRole(UserRoleEnum.USER);
+        UserRoleEntity role = roleRepository.findByRole(UserRoleEnum.USER).orElseThrow();
         mappedEntity.getRoles().add(role);
         mappedEntity.setPassword(passwordEncoder.encode(userRegistrationDTO.getPassword()));
         return mappedEntity;

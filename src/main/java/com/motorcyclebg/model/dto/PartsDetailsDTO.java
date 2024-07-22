@@ -11,6 +11,8 @@ public record PartsDetailsDTO(
         String partsBrand,
         PartsConditionTypeEnum partsConditionType,
         String partsDescription,
+        Integer phone,
+        String city,
         Integer partsPrice,
         List<String> allCurrencies,
         List<String> images

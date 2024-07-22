@@ -9,6 +9,7 @@ public record OfferSummaryDTO(Long id,
                               Integer mileage,
                               Integer year,
                               Integer cubicCentimeters,
+                              String city,
                               Integer price,
                               List<String> images,
                               List<String> allCurrencies) {

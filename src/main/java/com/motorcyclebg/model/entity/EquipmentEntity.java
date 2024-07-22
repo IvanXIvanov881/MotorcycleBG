@@ -31,6 +31,13 @@ public class EquipmentEntity extends BaseEntity {
     @PositiveOrZero
     private Integer equipmentPrice;
 
+    @NotEmpty
+    @PositiveOrZero
+    private Integer phone;
+
+    @Size(max = 21)
+    private String city;
+
     @ElementCollection(fetch = FetchType.EAGER)
     @Column(name = "images")
     private List<@URL @NotBlank String> images = new ArrayList<>();
@@ -87,6 +94,24 @@ public class EquipmentEntity extends BaseEntity {
 
     public EquipmentEntity setImages(List<String> equipmentImages) {
         this.images = equipmentImages;
+        return this;
+    }
+
+    public Integer getPhone() {
+        return phone;
+    }
+
+    public EquipmentEntity setPhone(Integer phone) {
+        this.phone = phone;
+        return this;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public EquipmentEntity setCity(String city) {
+        this.city = city;
         return this;
     }
 }

@@ -57,6 +57,7 @@ public class EquipmentServiceImpl implements EquipmentService {
         return new EquipmentSummaryDTO(equipmentEntity.getId(),
                 equipmentEntity.getEquipmentType(),
                 equipmentEntity.getEquipmentBrand(),
+                equipmentEntity.getCity(),
                 equipmentEntity.getEquipmentPrice(),
                 equipmentEntity.getImages(),
                 exRateService.allSupportedCurrencies()
@@ -71,6 +72,8 @@ public class EquipmentServiceImpl implements EquipmentService {
                 equipmentEntity.getEquipmentBrand(),
                 equipmentEntity.getEquipmentConditionType(),
                 equipmentEntity.getEquipmentDescription(),
+                equipmentEntity.getPhone(),
+                equipmentEntity.getCity(),
                 equipmentEntity.getEquipmentPrice(),
                 exRateService.allSupportedCurrencies(),
                 equipmentEntity.getImages()
@@ -85,6 +88,8 @@ public class EquipmentServiceImpl implements EquipmentService {
                 .setEquipmentBrand(addEquipmentDTO.getEquipmentBrand())
                 .setEquipmentConditionType(addEquipmentDTO.getEquipmentConditionType())
                 .setEquipmentDescription(addEquipmentDTO.getEquipmentDescription())
+                .setPhone(addEquipmentDTO.getPhone())
+                .setCity(addEquipmentDTO.getCity())
                 .setEquipmentPrice(addEquipmentDTO.getEquipmentPrice())
                 .setImages(addEquipmentDTO.getImages());
     }

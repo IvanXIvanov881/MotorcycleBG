@@ -41,6 +41,13 @@ public class OfferEntity extends BaseEntity {
     private String description;
     @Size(max = 31)
     private String color;
+
+    @NotEmpty
+    @PositiveOrZero
+    private Integer phone;
+
+    @Size(max = 21)
+    private String city;
     @ElementCollection(fetch = FetchType.EAGER)
     @Column(name = "images")
     private List<@URL @NotBlank String> images = new ArrayList<>();
@@ -173,6 +180,24 @@ public class OfferEntity extends BaseEntity {
 
     public OfferEntity setHp(Integer hp) {
         this.hp = hp;
+        return this;
+    }
+
+    public Integer getPhone() {
+        return phone;
+    }
+
+    public OfferEntity setPhone(Integer phone) {
+        this.phone = phone;
+        return this;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public OfferEntity setCity(String city) {
+        this.city = city;
         return this;
     }
 }

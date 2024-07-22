@@ -34,6 +34,7 @@
 
             <ul class="offer-details list-group list-group-flush">
                 <li class="list-group-item">
+                    <div class="card-text"><strong>• City: </strong><span th:text="*{city()}">City</span></div>
                     <div class="card-text"><strong>• Price: </strong><span class="price" th:text="*{equipmentPrice}">Equipment price</span>
                         <select class="currency">
                             <option th:each="currency : *{allCurrencies}"

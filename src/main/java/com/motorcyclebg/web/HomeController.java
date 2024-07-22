@@ -12,7 +12,7 @@ public class HomeController {
 
     @GetMapping("/")
     public String home(@AuthenticationPrincipal UserDetails userDetails,
-                            Model model ) {
+                       Model model ) {
 
         if(userDetails instanceof MotorcyclebgUserDetails motorcyclebgUserDetails) {
             model.addAttribute("welcomeMessage", motorcyclebgUserDetails.getFullName());

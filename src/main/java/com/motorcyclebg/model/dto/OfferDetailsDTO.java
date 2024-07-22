@@ -17,6 +17,8 @@ public record OfferDetailsDTO(Long id,
                               ConditionTypeEnum conditionType,
                               String color,
                               String description,
+                              Integer phone,
+                              String city,
                               Integer price,
                               List<String> allCurrencies,
                               List<String> images) {

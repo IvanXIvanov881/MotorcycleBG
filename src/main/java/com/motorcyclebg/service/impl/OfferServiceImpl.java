@@ -59,6 +59,7 @@ public class OfferServiceImpl implements OfferService {
                 offerEntity.getMileage(),
                 offerEntity.getYear(),
                 offerEntity.getCubicCentimeters(),
+                offerEntity.getCity(),
                 offerEntity.getPrice(),
                 offerEntity.getImages(),
                 exRateService.allSupportedCurrencies()
@@ -81,6 +82,8 @@ public class OfferServiceImpl implements OfferService {
                 offerEntity.getConditionType(),
                 offerEntity.getColor(),
                 offerEntity.getDescription(),
+                offerEntity.getPhone(),
+                offerEntity.getCity(),
                 offerEntity.getPrice(),
                 exRateService.allSupportedCurrencies(),
                 offerEntity.getImages()
@@ -101,6 +104,8 @@ public class OfferServiceImpl implements OfferService {
                 .setTransmission(addOfferDTO.getTransmissionType())
                 .setMileage(addOfferDTO.getMileage())
                 .setYear(addOfferDTO.getYear())
+                .setPhone(addOfferDTO.getPhone())
+                .setCity(addOfferDTO.getCity())
                 .setPrice(addOfferDTO.getPrice())
                 .setConditionType(addOfferDTO.getConditionType())
                 .setColor(addOfferDTO.getColor())

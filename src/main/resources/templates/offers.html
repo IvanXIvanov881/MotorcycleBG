@@ -41,6 +41,7 @@
                     <div class="card-text"><strong>• Cubic centimeters: </strong><span th:text="*{cubicCentimeters}">Cubic centimeters</span> ccm</div>
                     <div class="card-text"><strong>• Year: </strong><span th:text="*{year()}">Year</span></div>
                     <div class="card-text"><strong>• Mileage: </strong><span th:text="*{mileage()}">Mileage</span></div>
+                    <div class="card-text"><strong>• City: </strong><span th:text="*{city()}">City</span></div>
                     <div class="card-text"><strong>• Price: </strong><span class="price" th:text="*{price}">Price</span>
                         <select class="currency">
                             <option th:each="currency : *{allCurrencies}"

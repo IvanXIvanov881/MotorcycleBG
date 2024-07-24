@@ -11,10 +11,10 @@ import jakarta.validation.constraints.Size;
 
 public class UserRegistrationDTO {
 
-    @Size(min = 3, max = 50)
+    @Size(message = "{add.first.name.size}", min = 1, max = 50)
     @NotBlank(message = "{add.first.name.cannot.be.not.empty}")
     private String firstName;
-    @Size(min = 3, max = 50)
+    @Size(message = "{add.last.name.size}", min = 1, max = 50)
     @NotBlank(message = "{add.last.name.cannot.be.not.empty}")
     private String lastName;
     @NotBlank(message = "{add.password.cannot.be.not.empty}")

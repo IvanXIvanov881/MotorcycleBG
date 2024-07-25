@@ -31,7 +31,6 @@ public class EquipmentEntity extends BaseEntity {
     @PositiveOrZero
     private Integer equipmentPrice;
 
-    @NotEmpty
     @PositiveOrZero
     private Integer phone;
 

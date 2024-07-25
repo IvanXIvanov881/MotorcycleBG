@@ -294,3 +294,11 @@ insert into parts (id, city, parts_brand, parts_condition_type, parts_descriptio
 
 insert into parts_entity_images (parts_entity_id, images) values
 (4, 'https://upload.wikimedia.org/wikipedia/commons/7/73/Tires_for_motorcycle_racing.jpg');
+
+
+insert into parts (id, city, parts_brand, parts_condition_type, parts_description, parts_price, parts_type, phone) values
+(5, 'Vidin', 'Lucas', 'NEW', 'Brake pads are a component of disc brakes used in automotive and other applications.
+Brake pads are composed of steel backing plates with friction material bound to the surface that faces the disc brake rotors.', 120, 'EnginePartsFilters', 0894411222);
+
+insert into parts_entity_images (parts_entity_id, images) values
+(5, 'https://upload.wikimedia.org/wikipedia/commons/a/a6/Performance_Disk_Brake_Pads.jpg');

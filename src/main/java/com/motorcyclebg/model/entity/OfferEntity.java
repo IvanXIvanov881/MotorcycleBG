@@ -42,7 +42,6 @@ public class OfferEntity extends BaseEntity {
     @Size(max = 31)
     private String color;
 
-    @NotEmpty
     @PositiveOrZero
     private Integer phone;
 

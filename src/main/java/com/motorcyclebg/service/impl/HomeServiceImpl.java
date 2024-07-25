@@ -55,7 +55,7 @@ public class HomeServiceImpl implements HomeService {
         return homeList;
     }
 
-    private static HomeSummaryDTO offersToHomeSummaryDTO(OfferEntity offerEntity) {
+    static HomeSummaryDTO offersToHomeSummaryDTO(OfferEntity offerEntity) {
         //TODO use mapping library
         return new HomeSummaryDTO(
 
@@ -66,7 +66,7 @@ public class HomeServiceImpl implements HomeService {
         );
     }
 
-    private static HomeSummaryDTO equipmentToHomeSummaryDTO(EquipmentEntity equipmentEntity) {
+    static HomeSummaryDTO equipmentToHomeSummaryDTO(EquipmentEntity equipmentEntity) {
         //TODO use mapping library
         return new HomeSummaryDTO(
 
@@ -77,7 +77,7 @@ public class HomeServiceImpl implements HomeService {
         );
     }
 
-    private static HomeSummaryDTO partsToHomeSummaryDTO(PartsEntity partsEntity) {
+    static HomeSummaryDTO partsToHomeSummaryDTO(PartsEntity partsEntity) {
         //TODO use mapping library
         return new HomeSummaryDTO(
                 partsEntity.getPhone(),

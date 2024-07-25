@@ -1,9 +1,9 @@
 package com.motorcyclebg.service.impl;
 
-import com.motorcyclebg.model.dto.*;
-import com.motorcyclebg.model.entity.EquipmentEntity;
+import com.motorcyclebg.model.dto.AddPartsDTO;
+import com.motorcyclebg.model.dto.PartsDetailsDTO;
+import com.motorcyclebg.model.dto.PartsSummaryDTO;
 import com.motorcyclebg.model.entity.PartsEntity;
-import com.motorcyclebg.repository.EquipmentRepository;
 import com.motorcyclebg.repository.PartsRepository;
 import com.motorcyclebg.service.ExRateService;
 import com.motorcyclebg.service.PartsService;

@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: MotorcycleBG
+  jpa:
+    defer-datasource-initialization: true
+    properties:
+      hibernate:
+        format_sql: true
+    hibernate:
+      ddl-auto: update
+  sql:
+    init:
+      mode: never
+
+forex:
+  api:
+    key: ${FOREX_API_KEY:}
+    url: "https://openexchangerates.org/api/latest.json?app_id={app_id}"
+    base: "USD"
+
+admin:
+  email: ${admin_email}
+  password: ${admin_password}
+  firstName: ${admin_firstName}
+  lastName: ${admin_lastName}

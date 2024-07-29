@@ -10,7 +10,6 @@ import java.math.BigDecimal;
 
 @RestController
 public class CurrencyController {
-
     private final ExRateService exRateService;
 
     public CurrencyController(ExRateService exRateService) {

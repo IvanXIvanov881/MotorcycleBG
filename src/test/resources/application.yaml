@@ -1,6 +1,4 @@
 spring:
-  application:
-    name: MotorcycleBG
   jpa:
     defer-datasource-initialization: true
     properties:
@@ -11,15 +9,19 @@ spring:
   sql:
     init:
       mode: never
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
 
 forex:
   api:
-    key: ${FOREX_API_KEY:}
-    url: "https://openexchangerates.org/api/latest.json?app_id={app_id}"
+    key: test
+    url: "http://example.com"
     base: "USD"
 
 admin:
-  email: ${admin_email}
-  password: ${admin_password}
-  firstName: ${admin_firstName}
-  lastName: ${admin_lastName}
+  email: admin@example.com
+  password: password
+  firstName: Ivan
+  lastName: Ivanov
